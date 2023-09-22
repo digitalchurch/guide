@@ -20,4 +20,4 @@ Get started by **creating a new site** at digitalchurch.app.
 
 ## Generate a new site
 
-Generate a new Digital Church site using the **city church template**. Your website will be available at a subdomain (ie. yourname.digitalchurch.app) so you can take the time to build it out. You can also ask our team to migrate your current website content for free, or you can hire us to build your site for you.
+Generate a new Digital Church site using the **city church template**. Your website will be available at a subdomain (ie. yourname.digitalchurch.app) so you can take the time to build it out. You can also ask our team to migrate your current website content for free, or you can hire us to build your site for you. Does it work?
