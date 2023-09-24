@@ -79,6 +79,8 @@ body {
   position: relative;
   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
   margin-bottom:24px;
+  background-color:var(--slate-950);
+  border-radius:12px;
 }
 
 .player-wrapper iframe {
