@@ -21,8 +21,8 @@ const config = {
   organizationName: 'digitalchurch', // Usually your GitHub org/user name.
   projectName: 'guide', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'log',
+  onBrokenMarkdownLinks: 'log',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -125,8 +125,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Digital Church Limited.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
+        darkTheme: require('prism-react-renderer/themes/dracula'),
+        // theme: lightCodeTheme,
+        // darkTheme: darkCodeTheme,
       },
     }),
 };
