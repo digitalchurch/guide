@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Digital Church Team',
+  title: 'Digital Church Guide',
   tagline: 'Learn how to use the tools available on our Digital Church platform.',
   favicon: 'img/favicon.ico',
 
