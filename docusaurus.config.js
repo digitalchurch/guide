@@ -53,6 +53,13 @@ const config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: '/js/intercom.js',
+      async: false,
+    }
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -71,7 +78,7 @@ const config = {
             position: 'left',
             label: 'Guide',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'https://digitalchurch.support/', label: 'Support', position: 'left'},
           {
             href: 'https://digitalchurch.com',
             label: 'digitalchurch.com',
