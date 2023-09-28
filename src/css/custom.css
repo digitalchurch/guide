@@ -97,3 +97,21 @@ article img {
 footer {
   padding: 64px 12px !important;
 }
+
+.tabs-container {
+  border: 1px solid var(--neutral-200);
+  border-radius:8px;
+}
+
+.tabs-container > ul {
+  background: color-mix(in srgb, var(--neutral-100) 70%, transparent);
+  border-radius: 12px 12px 0 0;
+  padding:0px 12px
+}
+
+.tabs-container > div {
+  padding:24px;
+  background: color-mix(in srgb, var(--neutral-50) 70%, transparent);
+  margin-top:0 !important;
+  border-radius: 0 0 12px 12px;
+}
