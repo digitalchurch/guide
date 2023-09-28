@@ -63,6 +63,27 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '962UKSF2AW',
+    
+        // Public API key: it is safe to commit it
+        apiKey: 'bbbd6e31f1172dac56fe6137771f3828',
+    
+        indexName: 'guide_docs',
+    
+        // Optional: see doc section below
+        contextualSearch: true,
+    
+        // Optional: Algolia search parameters
+        searchParameters: {},
+    
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+    
+        //... other Algolia params
+      },
+      
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {

@@ -1,8 +1,24 @@
 ---
+title: Introduction
 sidebar_position: 1
+slug: /
 ---
 
 # Introduction
+
+import ReactPlayer from 'react-player';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<div className='player-wrapper'>
+<ReactPlayer url="https://vimeo.com/545052664"
+    width="100%"
+    height="100%"
+    controls={true}
+    playing={true}
+    muted={true}
+     />
+</div>
 
 ⚡️ Digital Church will help you build a website or native application for your church in no time.
 

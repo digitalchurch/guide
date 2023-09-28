@@ -64,15 +64,35 @@
   --ifm-color-primary-lightest: var(--brand-600);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: rgba(0, 0, 0, 0.2);
+
+  --neutral-50: var(--slate-950);
+  --neutral-100: var(--slate-900);
+  --neutral-200: var(--slate-800);
+  --neutral-300: var(--slate-700);
+  --neutral-400: var(--slate-600);
+  --neutral-500: var(--slate-500);
+  --neutral-600: var(--slate-400);
+  --neutral-700: var(--slate-300);
+  --neutral-800: var(--slate-200);
+  --neutral-900: var(--slate-100);
+  --neutral-950: var(--slate-50);
 }
 
 body {
+  height: unset !important;
   background-color: rgba(255,255,255,0);
   background-image: url('https://comingsoon.digitalchurch.app/wp-content/uploads/sites/25/2023/04/bbblurry-3.svg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.navbar {
+  background-color:unset !important;
+  background: color-mix(in srgb, var(--neutral-50) 30%, transparent) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
 }
 
 .player-wrapper {
@@ -94,8 +114,9 @@ article img {
   border-radius:12px;
 }
 
-footer {
+.footer {
   padding: 64px 12px !important;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent);
 }
 
 .tabs-container {
