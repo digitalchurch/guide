@@ -87,10 +87,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Digital Church Guide',
         logo: {
           alt: 'Digital Church',
-          src: 'img/DigitalChurch_FullColorIcon.svg',
+          src: 'img/DigitalChurch_FullColorLogo.svg',
+          href: 'https://digitalchurch.com/',
         },
         items: [
           {
@@ -100,57 +100,109 @@ const config = {
             label: 'Guide',
           },
           {to: 'https://digitalchurch.support/', label: 'Support', position: 'left'},
-          {
-            href: 'https://digitalchurch.com',
-            label: 'digitalchurch.com',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://digitalchurch.com',
+          //   label: 'digitalchurch.com',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
         style: 'light',
         links: [
           {
-            title: 'Docs',
             items: [
               {
-                label: 'Guide',
-                to: '/intro',
+                html: `
+                    <a href="https://digitalchurch.com" target="_blank" rel="noreferrer noopener" aria-label="Digital Church">
+                      <img src="img/DigitalChurch_FullColorLogo.svg" alt="Digital Church Logo" width="180" height="51" />
+                    </a>
+                  `,
+              },
+              {
+                label: 'Digital Church Limited',
+                href: 'https://digitalchurch.limited/',
+              },
+              {
+                label: 'Legal Information',
+                href: 'https://digitalchurch.com/legal',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Products',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Digital Church Platform',
+                href: 'https://digitalchurch.com/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Church Website Builder',
+                href: 'https://digitalchurch.com/website',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Church Native Applications',
+                href: 'https://digitalchurch.com/app',
+              },
+              {
+                label: 'Church Domain Registration',
+                href: 'https://digitalchurch.domains/',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Services',
+            items: [
+              {
+                label: 'Digital Church Agency',
+                href: 'https://digitalchurch.agency/',
+              },
+              {
+                label: 'Digital Church Consulting',
+                href: 'https://digitalchurch.consulting/',
+              },
+              {
+                label: 'Digital Church Marketing',
+                href: 'https://digitalchurch.marketing/',
+              },
+            ],
+          },
+          {
+            title: 'Support',
+            items: [
+              {
+                label: 'User Guide',
+                to: '/',
+              },
+              {
+                label: 'Platform Status',
+                href: 'https://status.digitalchurchplatform.com',
+              },
+              {
+                label: 'Latest Changes',
+                href: 'https://digitalchurch.com/changes/',
+              },
+            ],
+          },
+          {
+            title: 'Learn',
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://digitalchurch.blog/',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Academy',
+                href: 'https://digitalchurchacademy.com/',
+              },
+              {
+                label: 'Podcast',
+                href: 'https://digitalchurchpodcast.com/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Digital Church Limited.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Digital Church Limited`,
       },
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),

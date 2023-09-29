@@ -95,6 +95,35 @@ body {
   backdrop-filter: blur(24px) saturate(180%);
 }
 
+nav.menu {
+  font-size: .9rem;
+}
+
+.menu__link {
+  line-height:.9rem;
+}
+
+.menu__caret:before {
+  width:.75rem;
+  height:.75rem;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.2rem 1.2rem;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color:unset;
+  background: color-mix(in srgb, var(--neutral-500) 10%, transparent) !important;
+}
+
+.menu__link:hover, .menu__caret:hover {
+  background: color-mix(in srgb, var(--neutral-500) 10%, transparent) !important;
+  }
+
+@media (min-width: 997px) {
+  .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+  padding: 1rem !important;
+  }
+}
+
 .player-wrapper {
   position: relative;
   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
@@ -117,6 +146,11 @@ article img {
 .footer {
   padding: 64px 12px !important;
   background: color-mix(in srgb, var(--neutral-50) 50%, transparent);
+  font-size:.8rem;
+}
+
+li.footer__item img {
+  margin-top:-24px;
 }
 
 .tabs-container {
