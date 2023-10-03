@@ -90,7 +90,7 @@ body {
 
 .navbar {
   background-color:unset !important;
-  background: color-mix(in srgb, var(--neutral-50) 30%, transparent) !important;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent) !important;
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   backdrop-filter: blur(24px) saturate(180%);
 }
@@ -98,6 +98,13 @@ body {
 nav.menu {
   font-size: .9rem;
 }
+
+/* ul.theme-doc-sidebar-menu li:nth-of-type(2),
+ul.theme-doc-sidebar-menu li:nth-of-type(4),
+ul.theme-doc-sidebar-menu li:nth-of-type(14) {
+  border-bottom: 1px solid var(--neutral-300);
+  padding-bottom: 4px;
+} */
 
 .menu__link {
   line-height:.9rem;
@@ -117,6 +124,11 @@ nav.menu {
 .menu__link:hover, .menu__caret:hover {
   background: color-mix(in srgb, var(--neutral-500) 10%, transparent) !important;
   }
+
+.card {
+  background:unset;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent) !important;
+}
 
 @media (min-width: 997px) {
   .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
