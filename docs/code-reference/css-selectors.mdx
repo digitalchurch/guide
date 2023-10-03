@@ -1,0 +1,47 @@
+---
+title: CSS Selector Reference
+---
+
+# CSS Selector Reference
+
+We’ve put together several utility CSS classes to quickly apply styles to our templates or content on our client sites. Here’s a listing of these CSS Classes.
+
+## Video Wrapper
+
+The `.videoWrapper` class sets up a `<div>` to handle responsive video sizes. It defaults to a 16:9 ratio, but we have some other classes you can use for different ratios.
+
+```css
+.videoWrapper {16:9}
+.widescreen {16:9}
+.cinemascope {21:9}
+.standard {4:3}
+.vertical {9:16}
+```
+
+## Utilities
+
+These utility classes are used for functionality like hiding and showing content to specific users.
+
+`body:not(.fl-builder-edit)` This class will keep the contents hidden unless the builder is in edit mode. This way you can add CSS that hides certain elements but can still be accessed when the builder is editing.
+
+`.admin-visible` This class is only visible to those with Administrative Access (editors, administrators). Anonymous (non-logged-in) users and subscriber-level users won’t see content with this class.
+
+`.builder-notice` This class is only visible when the page builder is active. We use this to give hints about how some of our templates are set up to work in the page builder.
+
+## Style Classes
+
+`.blur-filter-bg` Rows and columns with the .blur-filter-bg class will add a blurred glass effect. You must also set a slightly opaque background color to achieve this effect.
+
+`.light-bg` Rows and columns with the .light-bg class will inherit the background color from the “light background” color selection in the global options.
+
+`.lighter-bg` Rows and columns with the .lighter-bg class will inherit the background color from the “lighter background” color selection in the global options.
+
+`.subtle-bg` Rows and columns with the .subtle-bg class will inherit the background color from the “subtle background” color selection in the global options.
+
+`.subtle-text` will use the .subtle-text color to inherit from the global options. If the .dark selector is also present, it will use the .subtle-bg color.
+
+`.primary-brand-text` will use the Primary Brand color to inherit from the global options.
+
+`.secondary-brand-text` will use the Secondary Brand color to inherit from the global options.
+
+`.dark` rows will convert all contained content into darkmode rows. Helpful for rows with photo or video backgrounds as well.
