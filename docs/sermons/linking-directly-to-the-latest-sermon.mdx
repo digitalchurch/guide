@@ -1,0 +1,32 @@
+# Linking Directly to the Latest Sermon
+
+Sometimes you want a link that automatically updates to the latest sermon.
+
+If you’d like to link to the latest sermon directly, we’ve done some coding to help you do that easily. We’ve created what is called a “Shortcode”, which is a simple piece of code you can use to run a more complex function, like grabbing the link to the latest sermon.
+
+Linking to the latest sermon in the Page Builder or Post Content
+
+Here it is:
+
+```html Latest Sermon Shortcode
+[latest-sermon]
+```
+
+Simple, eh?
+
+Just add that code where you would normally add a link anywhere on the site. It could be in a plain text link, a button URL, an image link… anywhere you normally place a link… with one exception…
+
+
+## Linking to the latest sermon in a Navigation Menu
+
+If you want to add this link to a wordpress navigation menu (Like the header menu or a footer menu), we had to create a slight workaround to make it functional. Wordpress forces all nav links to start with http:// , https:// , / , or # , as those are the characters that you could use in a typical hyperlink. To get around that, we’ve create another version of the shortcode just for navigation links. If you’d like to link to the latest sermon in a navigation menu, use this:
+
+```html Latest Sermon Navigation Item
+#latest-sermon#
+```
+
+:::tip
+Also, keep in mind that you can use the “Latest” feature in the edit screen for a connect card to create a connect card that links to the latest sermon as well. This is great if you’d like to make sermon notes available on Sunday morning for people to follow along with. Just pre-publish your sermon with a title, content, and artwork. Then when the video or audio is ready, just edit your sermon to add those items.
+:::
+
+If you’d like to see this kind of functionality developed for other content types, just let us know via the chat!
