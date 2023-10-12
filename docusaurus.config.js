@@ -105,6 +105,7 @@ const config = {
         logo: {
           alt: 'Digital Church',
           src: 'img/DigitalChurch_FullColorLogo.svg',
+          srcDark: 'img/DigitalChurch_DarkModeLogo.svg',
           href: 'https://digitalchurch.com/',
         },
         items: [
@@ -113,6 +114,24 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Guide',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'templateSidebar',
+            position: 'left',
+            label: 'Templates',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'designSidebar',
+            position: 'left',
+            label: 'Design',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'apiSidebar',
+            position: 'left',
+            label: 'API',
           },
           {to: 'https://digitalchurch.support/', label: 'Support', position: 'left'},
           // {
