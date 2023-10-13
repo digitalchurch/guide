@@ -1,0 +1,8 @@
+{
+  "label": "Modules",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "How to use each module in the page builder."
+  }
+}
