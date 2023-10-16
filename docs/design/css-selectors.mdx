@@ -11,11 +11,25 @@ We’ve put together several utility CSS classes to quickly apply styles to our 
 The `.videoWrapper` class sets up a `<div>` to handle responsive video sizes. It defaults to a 16:9 ratio, but we have some other classes you can use for different ratios.
 
 ```css
-.videoWrapper {16:9}
-.widescreen {16:9}
-.cinemascope {21:9}
-.standard {4:3}
-.vertical {9:16}
+.widescreen iframe {
+    aspect-ratio:16/9;
+    height:auto !important;
+    }
+
+.cinemascope iframe {
+    aspect-ratio:21/9;
+    height:auto !important;
+    }
+
+.standard iframe {
+    aspect-ratio:4/3;
+    height:auto !important;
+    }
+
+.vertical iframe {
+    aspect-ratio:9/16;
+    height:auto !important;
+    }
 ```
 
 ## Utilities
