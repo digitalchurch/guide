@@ -106,6 +106,10 @@ ul.theme-doc-sidebar-menu li:nth-of-type(14) {
   padding-bottom: 4px;
 } */
 
+article img {
+  margin:24px 0;
+}
+
 .menu__link {
   line-height:.9rem;
 }
