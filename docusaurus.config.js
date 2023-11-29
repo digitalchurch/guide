@@ -68,12 +68,12 @@ const config = {
     ({
       algolia: {
         // The application ID provided by Algolia
-        appId: '962UKSF2AW',
+        appId: 'ISLLHGAOWD',
     
         // Public API key: it is safe to commit it
-        apiKey: 'bbbd6e31f1172dac56fe6137771f3828',
+        apiKey: 'f43d24a36b8c57135d4eb6db616d156c',
     
-        indexName: 'guide_docs',
+        indexName: 'digitalchurch',
     
         // Optional: see doc section below
         contextualSearch: true,
@@ -85,6 +85,10 @@ const config = {
         searchPagePath: 'search',
     
         //... other Algolia params
+        insights: true,
+
+        // Set debug to true if you want to inspect the modal
+        debug: false,
       },
       
       zoom: {
