@@ -107,8 +107,8 @@ const config = {
       navbar: {
         logo: {
           alt: 'Digital Church',
-          src: 'img/DigitalChurch_FullColorLogo.svg',
-          srcDark: 'img/DigitalChurch_DarkModeLogo.svg',
+          src: '/img/DigitalChurch_FullColorLogo.svg',
+          srcDark: '/img/DigitalChurch_DarkModeLogo.svg',
           href: 'https://digitalchurch.com/',
         },
         items: [
