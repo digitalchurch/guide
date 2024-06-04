@@ -7,7 +7,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Digital Church Guide',
   tagline: 'Learn how to use the tools available on our Digital Church platform.',
-  favicon: 'img/DigitalChurch_FullColorIcon.ico',
+  favicon: '/img/DigitalChurch_FullColorIcon.ico',
 
   // Set the production url of your site here
   url: 'https://digitalchurch.guide/',
@@ -148,7 +148,7 @@ const config = {
             position: 'left',
             label: 'API',
           },
-          {to: 'https://digitalchurch.support/', label: 'Support', position: 'left'},
+          {to: 'https://digitalchurch.help/', label: 'Support', position: 'left'},
           // {
           //   href: 'https://digitalchurch.com',
           //   label: 'digitalchurch.com',
@@ -164,7 +164,7 @@ const config = {
               {
                 html: `
                     <a href="https://digitalchurch.com" target="_blank" rel="noreferrer noopener" aria-label="Digital Church">
-                      <img src="img/DigitalChurch_FullColorLogo.svg" alt="Digital Church Logo" width="180" height="51" />
+                      <img src="/img/DigitalChurch_FullColorLogo.svg" alt="Digital Church Logo" width="180" height="51" />
                     </a>
                   `,
               },
