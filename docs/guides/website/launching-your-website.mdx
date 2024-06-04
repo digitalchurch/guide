@@ -1,0 +1,42 @@
+# Launching Your Site
+
+Launching your site is quick and easy. If you’d like, we will do all of this for you. Contact us via chat and we’ll take care of it. If you’d rather do it yourself follow this guide exactly. There are no optional steps.
+
+## Purchase a domain
+
+If you don’t already own a domain you can purchase a domain from any provider. We believe that it is vitally important for our clients to own their own domain. We recommend Google Domains. If you use Google Domains, you’ll be able to easily grant access to us to manage your domain settings without giving us your own Google credentials.
+
+## Pointing Your Domain to Digital Church
+
+First we need to set up an account with CloudFlare https://cloudflare.com/ to manage your DNS. It is free and offers added security. Our IP Address changes often so you CANNOT use A records to point to our sites.
+
+:::warning
+PLEASE NOTE: THIS IS NOT AN OPTIONAL STEP, CLOUDFLARE MUST BE SETUP. IF YOU WOULD LIKE, WE CAN DO THIS FOR YOU.
+:::
+
+1. Log in to your domain registrar. This is the place where you purchased your domain. Some example of registrars are godaddy.com, hover.com, domains.google.com.
+2. Navigate to the Domain sections of your register. This could be called DNS Manager, Zone File Settings, Manager Domains, Domain Manager or something similar.
+3. Write down all the current records so that you have them just incase you need to undo any of the changes.
+4. We need to add four new CNAME records to your domain.
+
+| Type | Name | Target | TTL | Proxy Status |
+|---|---|---|---|---|
+| CNAME | _acme-challenge | _acme-challenge.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
+| CNAME | _acme-challenge.www | _acme-challenge.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
+| CNAME | www | @ | Auto | DNS Only (Grey Cloud) |
+| CNAME | @ | your.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
+
+## Setting up your CloudFlare SSL Edge Certificate
+
+Once you’ve set up your DNS records, visit the SSL/TLS tab of your CloudFlare account and set Your SSL/TLS encryption mode to Full (strict).
+
+## Mapping The Domain within your new website
+
+Adding your custom domain to your Digital Church account.
+
+1. Log Into your admin area and visit your Account page.
+2. Enter your domain in the Domain field and hit save.
+
+:::note
+Sites can take up to 48 hours for the changes to work their way through the system. Open a chat with us if you have any questions and we will be able to assist you.
+:::

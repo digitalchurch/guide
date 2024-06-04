@@ -1,0 +1,43 @@
+# Add Your Livestream to a Page
+
+With Digital Church, you can add your livestream feed anywhere on your website. You can also add a live countdown timer. If you add the countdown timer to your page, you can set the stream (or any other content) to hide or show when the countdown expires and remain in that state until the designated “Off-Air” time.
+
+## Add your Livestream to a Page
+
+To add the livestream to a page, we’ll use the `[livestream]` shortcode by adding it to an HTML Module in the page builder. (You can also add that shortcode to a text area on a single post of dynamic content like an event by adding that shortcode to the description.)
+
+Open the page builder and drag an HTML module into your layout.
+
+In the General Tab of the HTML Module settings, add the `[livestream]` shortcode.
+
+Save the changes to the HTML Module and publish your page.
+
+## Add a Countdown Timer
+
+If you set an on-air and off-air time in your livestream settings, you can add a countdown timer to your page as well. The timer includes some code that we’ll use later on to define content that will show or hide during the livestream on-air window.
+
+Drag another HTML Module into the page and add the `[live-timer]` shortcode. The font color will be inherited from the column or row settings.
+
+Save the HTML Module settings and publish your page.
+
+## Show Content During the On-Air Window
+
+1. Open the module/column/row settings of the content or area you want to show.
+2. Click on the Advanced tab and add the `on-air`  class in the class field.
+3. Save the module settings and publish your changes.
+
+Now anything on your website with the `on-air` class will only be visibe when you have a live stream on-air.
+
+## Hide Content During the On-Air Window
+
+1. Open the module/column/row settings of the content or area you want to show.
+2. Click on the Advanced tab and add the `off-air` class in the class field.
+3. Save the module settings and publish your changes.
+
+Now anything on your website with the class `off-air` will only be visible when your live stream is **not** live.
+
+:::note Timer Required for On-Air/Off-Air Classes
+If you want to use the `on-air` and `off-air` classes as described below, you must also have a `[live-timer]` on the same page so that when the timer expires, that page refreshes with the correct visible content.
+:::
+
+If you have any questions, feel free to reach out to us via the chat.

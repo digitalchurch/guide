@@ -1,0 +1,20 @@
+---
+title: Off-Canvas Nav Toggle
+---
+
+# Make off-canvas navigation parent menu items toggle the sub-menu items (instead of only the dropdown arrows)
+
+```css
+.drawer-nav-drop-wrap .drawer-sub-toggle {
+    position: absolute !important;
+    display: inline !important;
+    width: 100% !important;
+    padding: 1.2em 0.2em 1.2em 90% !important;
+    border-left:0 !important;
+}
+.collapse-sub-navigation ul.menu .drawer-nav-drop-wrap .drawer-sub-toggle {
+    border-bottom:none !important;
+}
+```
+
+By default, the off-canvas drawer menu doesn’t allow you to toggle the visibility of the submenu items by tapping/clicking on the actual parent menu item. The user needs to tap on the dropdown toggle arrow. We have some custom code you can add to the Custom CSS area of the Global Options area that will override that functionality and allow you to toggle submenus from clicking on the parent menu item. We suggest you only use empty links as parent menu items when doing this.

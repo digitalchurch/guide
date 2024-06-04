@@ -1,0 +1,36 @@
+---
+title: Troubleshooting
+sidebar_position: 99
+---
+
+# Troubleshooting in the Administrative Dashboard
+
+If you are having trouble with the dashboard, here are some common issues that users run into, along with solutions.
+
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline toc={toc} />
+
+## I don't see the settings box that I need.
+
+If you expect to see a settings area on an specific editor page, you might have hidden the "Metabox" or "Panel" in the Screen settings menu. Here's how to restore them:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="classic" label="Classic Editor" default>
+    If the admin page you are experiencing the issue with uses the classic editor, then you need to click on the "Screens" tab in the top right corner of the page. That will drop down a menu that shows which Metaboxes you have set as visible. If the settings area you are missing isn't checked, then select it and click on the <b>Apply</b> button.
+        <img
+        src={require('.//img/screen-options.jpg').default}
+        alt="Screen Options in Classic Editor"
+        />
+  </TabItem>
+  <TabItem value="block" label="Block Editor">
+    The the admin page you are experiencing the issue with uses the block editor, then you need to click on the three dots in the top right corner and select "Preferences". Then in the "Panels" tab of the Preferences menu, enable the panels you were missing.
+    <img
+        src={require('.//img/enable-panels.gif').default}
+        alt="Screen Options in Classic Editor"
+        />
+  </TabItem>
+</Tabs>
