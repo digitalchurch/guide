@@ -186,3 +186,7 @@ li.footer__item img {
   margin-top:0 !important;
   border-radius: 0 0 12px 12px;
 }
+
+.navbar-sidebar {
+  bottom: unset;
+}
