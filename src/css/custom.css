@@ -89,8 +89,21 @@ body {
 }
 
 .navbar {
+  background: transparent;
+  padding:0;
+}
+
+.navbar__inner {
   background-color:unset !important;
   background: color-mix(in srgb, var(--neutral-50) 50%, transparent) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  padding:8px 16px;
+}
+
+.navbar-sidebar {
+  background-color:unset !important;
+  background: color-mix(in srgb, var(--neutral-50) 98%, transparent) !important;
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   backdrop-filter: blur(24px) saturate(180%);
 }
@@ -185,8 +198,4 @@ li.footer__item img {
   background: color-mix(in srgb, var(--neutral-50) 70%, transparent);
   margin-top:0 !important;
   border-radius: 0 0 12px 12px;
-}
-
-.navbar-sidebar {
-  bottom: unset;
 }
