@@ -256,6 +256,7 @@ const config = {
       prism: {
         theme: prismThemes.dracula,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['bash'],
       },
     }),
 };
