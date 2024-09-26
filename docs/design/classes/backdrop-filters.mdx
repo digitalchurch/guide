@@ -16,9 +16,10 @@ Simply add the class `.backdrop-saturate-0` to your page builder row to see it i
 
 For reference, this is the CSS code we are using:
 
-```css
+```css title="utilities.css"
 body:not(.fl-builder) .backdrop-saturate-0,
-.backdrop-saturate-0 .fl-row-content-wrap:after {
+.backdrop-saturate-0 .fl-row-content-wrap:after,
+.backdrop-saturate-0 .fl-col-content::after {
     -webkit-backdrop-filter: saturate(0);
     backdrop-filter: saturate(0);
 }
@@ -28,10 +29,12 @@ body:not(.fl-builder) .backdrop-saturate-0,
 
 We've also added a blur filter effect so you can get the frosted glass effect. Add the `.backdrop-blur` class to activate that effect.
 
-```css
+```css title="utilities.css"
 body:not(.fl-builder) .backdrop-blur,
-.backdrop-blur .fl-row-content-wrap:after {
+.backdrop-blur .fl-row-content-wrap:after,
+.backdrop-blur .fl-col-content::after {
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 ```
+
