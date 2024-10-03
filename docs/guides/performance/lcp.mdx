@@ -39,7 +39,25 @@ We are working on writing our own guides for this section. In the meantime, this
 
 As a default, enable lazy loading and set it to ignore the first two images on each page so it doesn't lazy load above the fold.
 
-- Set the trheshold to 280px by default.
+- Images: true
+- Exclude Leading Images: 2
+- iFrames and Videos: true
+- YouTube Preview Thumbnails: true
+- Exclude from Lazy Loading:
+```
+id="livestream"
+class="no-lazy"
+```
+- Threshold: 240px
+- DOM Monitoring: false
+- Add Missing Image Dimensions: true
+- Fade In: true
+- CSS Background Images: true
+- Background Selectors:
+```
+.fl-row-content-wrap
+.fl-col-content
+```
 
 ### Minify CSS & JS
 
