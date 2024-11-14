@@ -1,0 +1,8 @@
+{
+  "label": "Components",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "View the react components that are available in the Digital Church Design System."
+  }
+}

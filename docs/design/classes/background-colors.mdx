@@ -148,5 +148,326 @@ title: Background Colors
 ### Secondary Brand Text
 `.secondary-brand-text` Use this class to inherit the Secondary Brand color from the global options.
 
-### Dark Mode
-`.dark` Use this class to convert all contained content into dark mode. Helpful for rows with photo or video backgrounds.
+## Code
+
+Here's the code that controls the background colors:
+
+```css
+body:not(.fl-builder) .bg-white,
+.bg-white .fl-col-content,
+.bg-white .fl-row-content-wrap,
+.bg-white .fl-module-box,
+.fl-module-content .bg-white {
+    background-color: var(--white);
+}
+
+body:not(.fl-builder) .bg-base-50,
+.bg-base-50 .fl-col-content,
+.bg-base-50 .fl-row-content-wrap,
+.bg-base-50 .fl-module-box,
+.fl-module-content .bg-base-50 {
+    background-color: var(--base-50);
+}
+
+body:not(.fl-builder) .bg-base-100,
+.bg-base-100 .fl-col-content,
+.bg-base-100 .fl-row-content-wrap,
+.bg-base-100 .fl-module-box,
+.fl-module-content .bg-base-100 {
+    background-color: var(--base-100);
+}
+
+body:not(.fl-builder) .bg-base-200,
+.bg-base-200 .fl-col-content,
+.bg-base-200 .fl-row-content-wrap,
+.bg-base-200 .fl-module-box,
+.fl-module-content .bg-base-200 {
+    background-color: var(--base-200);
+}
+
+body:not(.fl-builder) .bg-base-300,
+.bg-base-300 .fl-col-content,
+.bg-base-300 .fl-row-content-wrap,
+.bg-base-300 .fl-module-box,
+.fl-module-content .bg-base-300 {
+    background-color: var(--base-300);
+}
+
+body:not(.fl-builder) .bg-base-400,
+.bg-base-400 .fl-col-content,
+.bg-base-400 .fl-row-content-wrap,
+.bg-base-400 .fl-module-box,
+.fl-module-content .bg-base-400 {
+    background-color: var(--base-400);
+}
+
+body:not(.fl-builder) .bg-base-500,
+.bg-base-500 .fl-col-content,
+.bg-base-500 .fl-row-content-wrap,
+.bg-base-500 .fl-module-box,
+.fl-module-content .bg-base-500 {
+    background-color: var(--base-500);
+}
+
+body:not(.fl-builder) .bg-base-600,
+.bg-base-600 .fl-col-content,
+.bg-base-600 .fl-row-content-wrap,
+.bg-base-600 .fl-module-box,
+.fl-module-content .bg-base-600 {
+    background-color: var(--base-600);
+}
+
+body:not(.fl-builder) .bg-base-700,
+.bg-base-700 .fl-col-content,
+.bg-base-700 .fl-row-content-wrap,
+.bg-base-700 .fl-module-box,
+.fl-module-content .bg-base-700 {
+    background-color: var(--base-700);
+}
+
+body:not(.fl-builder) .bg-base-800,
+.bg-base-800 .fl-col-content,
+.bg-base-800 .fl-row-content-wrap,
+.bg-base-800 .fl-module-box,
+.fl-module-content .bg-base-800 {
+    background-color: var(--base-800);
+}
+
+body:not(.fl-builder) .bg-base-900,
+.bg-base-900 .fl-col-content,
+.bg-base-900 .fl-row-content-wrap,
+.bg-base-900 .fl-module-box,
+.fl-module-content .bg-base-900 {
+    background-color: var(--base-900);
+}
+
+body:not(.fl-builder) .bg-base-950,
+.bg-base-950 .fl-col-content,
+.bg-base-950 .fl-row-content-wrap,
+.bg-base-950 .fl-module-box,
+.fl-module-content .bg-base-950 {
+    background-color: var(--base-950);
+}
+
+body:not(.fl-builder) .bg-black,
+.bg-black .fl-col-content,
+.bg-black .fl-row-content-wrap,
+.bg-black .fl-module-box,
+.fl-module-content .bg-black {
+    background-color: var(--black);
+}
+
+body:not(.fl-builder) .bg-brand-300,
+.bg-brand-300 .fl-col-content,
+.bg-brand-300 .fl-row-content-wrap,
+.bg-brand-300 .fl-module-box,
+.fl-module-content .bg-brand-300 {
+    background-color: var(--brand-300);
+}
+
+body:not(.fl-builder) .bg-brand-400,
+.bg-brand-400 .fl-col-content,
+.bg-brand-400 .fl-row-content-wrap,
+.bg-brand-400 .fl-module-box,
+.fl-module-content .bg-brand-400 {
+    background-color: var(--brand-400);
+}
+
+body:not(.fl-builder) .bg-brand,
+.bg-brand .fl-col-content,
+.bg-brand .fl-row-content-wrap,
+body:not(.fl-builder) .bg-brand-500,
+.bg-brand-500 .fl-col-content,
+.bg-brand-500 .fl-row-content-wrap,
+.bg-brand-500 .fl-module-box,
+.fl-module-content .bg-brand-500 {
+    background-color: var(--brand-500);
+}
+
+body:not(.fl-builder) .bg-brand-600,
+.bg-brand-600 .fl-col-content,
+.bg-brand-600 .fl-row-content-wrap,
+.bg-brand-600 .fl-module-box,
+.fl-module-content .bg-brand-600 {
+    background-color: var(--brand-600);
+}
+
+body:not(.fl-builder) .bg-brand-700,
+.bg-brand-700 .fl-col-content,
+.bg-brand-700 .fl-row-content-wrap,
+.bg-brand-700 .fl-module-box,
+.fl-module-content .bg-brand-700 {
+    background-color: var(--brand-700);
+}
+
+body:not(.fl-builder) .bg-brand-gradient,
+.bg-brand-gradient .fl-col-content,
+.bg-brand-gradient .fl-row-content-wrap,
+.bg-brand-gradient .fl-module-box,
+.fl-module-content .bg-brand-gradient {
+    background: rgb(169,176,255);
+    background: linear-gradient(90deg, var(--brand-300) 0%, var(--brand-400) 25%, var(--brand-500) 50%, var(--brand-600) 75%, var(--brand-700) 100%);
+}
+
+body:not(.fl-builder) .bg-primary-400,
+.bg-primary-400 .fl-col-content,
+.bg-primary-400 .fl-row-content-wrap,
+.bg-primary-400 .fl-module-box,
+.fl-module-content .bg-primary-400 {
+    background-color: var(--primary-400);
+}
+
+body:not(.fl-builder) .bg-primary,
+.bg-primary .fl-col-content,
+.bg-primary .fl-row-content-wrap,
+body:not(.fl-builder) .bg-primary-500,
+.bg-primary-500 .fl-col-content,
+.bg-primary-500 .fl-row-content-wrap,
+.bg-primary-500 .fl-module-box,
+.fl-module-content .bg-primary-500 {
+    background-color: var(--primary-500);
+}
+
+body:not(.fl-builder) .bg-primary-600,
+.bg-primary-600 .fl-col-content,
+.bg-primary-600 .fl-row-content-wrap,
+.bg-primary-600 .fl-module-box,
+.fl-module-content .bg-primary-600 {
+    background-color: var(--primary-600);
+}
+
+body:not(.fl-builder) .bg-secondary-400,
+.bg-secondary-400 .fl-col-content,
+.bg-secondary-400 .fl-row-content-wrap,
+.bg-secondary-400 .fl-module-box,
+.fl-module-content .bg-secondary-400 {
+    background-color: var(--secondary-400);
+}
+
+body:not(.fl-builder) .bg-secondary,
+.bg-secondary .fl-col-content,
+.bg-secondary .fl-row-content-wrap,
+body:not(.fl-builder) .bg-secondary-500,
+.bg-secondary-500 .fl-col-content,
+.bg-secondary-500 .fl-row-content-wrap,
+.bg-secondary-500 .fl-module-box,
+.fl-module-content .bg-secondary-500 {
+    background-color: var(--secondary-500);
+}
+
+body:not(.fl-builder) .bg-secondary-600,
+.bg-secondary-600 .fl-col-content,
+.bg-secondary-600 .fl-row-content-wrap,
+.bg-secondary-600 .fl-module-box,
+.fl-module-content .bg-secondary-600 {
+    background-color: var(--secondary-600);
+}
+
+body:not(.fl-builder) .bg-tertiary-400,
+.bg-tertiary-400 .fl-col-content,
+.bg-tertiary-400 .fl-row-content-wrap,
+.bg-tertiary-400 .fl-module-box,
+.fl-module-content .bg-tertiary-400 {
+    background-color: var(--tertiary-400);
+}
+
+body:not(.fl-builder) .bg-tertiary,
+.bg-tertiary .fl-col-content,
+.bg-tertiary .fl-row-content-wrap,
+body:not(.fl-builder) .bg-tertiary-500,
+.bg-tertiary-500 .fl-col-content,
+.bg-tertiary-500 .fl-row-content-wrap,
+.bg-tertiary-500 .fl-module-box,
+.fl-module-content .bg-tertiary-500 {
+    background-color: var(--tertiary-500);
+}
+
+body:not(.fl-builder) .bg-tertiary-600,
+.bg-tertiary-600 .fl-col-content,
+.bg-tertiary-600 .fl-row-content-wrap,
+.bg-tertiary-600 .fl-module-box,
+.fl-module-content .bg-tertiary-600 {
+    background-color: var(--tertiary-600);
+}
+
+body:not(.fl-builder) .bg-success-400,
+.bg-success-400 .fl-col-content,
+.bg-success-400 .fl-row-content-wrap,
+.bg-success-400 .fl-module-box,
+.fl-module-content .bg-success-400 {
+    background-color: var(--success-400);
+}
+
+body:not(.fl-builder) .bg-success,
+.bg-success .fl-col-content,
+.bg-success .fl-row-content-wrap,
+body:not(.fl-builder) .bg-success-500,
+.bg-success-500 .fl-col-content,
+.bg-success-500 .fl-row-content-wrap,
+.bg-success-500 .fl-module-box,
+.fl-module-content .bg-success-500 {
+    background-color: var(--success-500);
+}
+
+body:not(.fl-builder) .bg-success-600,
+.bg-success-600 .fl-col-content,
+.bg-success-600 .fl-row-content-wrap,
+.bg-success-600 .fl-module-box,
+.fl-module-content .bg-success-600 {
+    background-color: var(--success-600);
+}
+
+body:not(.fl-builder) .bg-warning-400,
+.bg-warning-400 .fl-col-content,
+.bg-warning-400 .fl-row-content-wrap,
+.bg-warning-400 .fl-module-box,
+.fl-module-content .bg-warning-400 {
+    background-color: var(--warning-400);
+}
+
+body:not(.fl-builder) .bg-warning,
+.bg-warning .fl-col-content,
+.bg-warning .fl-row-content-wrap,
+body:not(.fl-builder) .bg-warning-500,
+.bg-warning-500 .fl-col-content,
+.bg-warning-500 .fl-row-content-wrap,
+.bg-warning-500 .fl-module-box,
+.fl-module-content .bg-warning-500 {
+    background-color: var(--warning-500);
+}
+
+body:not(.fl-builder) .bg-warning-600,
+.bg-warning-600 .fl-col-content,
+.bg-warning-600 .fl-row-content-wrap,
+.bg-warning-600 .fl-module-box,
+.fl-module-content .bg-warning-600 {
+    background-color: var(--warning-600);
+}
+
+body:not(.fl-builder) .bg-danger-400,
+.bg-danger-400 .fl-col-content,
+.bg-danger-400 .fl-row-content-wrap,
+.bg-danger-400 .fl-module-box,
+.fl-module-content .bg-danger-400 {
+    background-color: var(--danger-400);
+}
+
+body:not(.fl-builder) .bg-danger,
+.bg-danger .fl-col-content,
+.bg-danger .fl-row-content-wrap,
+body:not(.fl-builder) .bg-danger-500,
+.bg-danger-500 .fl-col-content,
+.bg-danger-500 .fl-row-content-wrap,
+.bg-danger-500 .fl-module-box,
+.fl-module-content .bg-danger-500 {
+    background-color: var(--danger-500);
+}
+
+body:not(.fl-builder) .bg-danger-600,
+.bg-danger-600 .fl-col-content,
+.bg-danger-600 .fl-row-content-wrap,
+.bg-danger-600 .fl-module-box,
+.fl-module-content .bg-danger-600 {
+    background-color: var(--danger-600);
+}
+```
