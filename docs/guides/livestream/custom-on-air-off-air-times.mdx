@@ -1,0 +1,21 @@
+# Custom On-Air or Off-Air Times
+
+If you’d like to customize the on-air and off-air functionality on a specific page, or if you need to span more than one day, you’ll need to assign a special class in place of the on-air and off-air classes. Then you can add this javascript to the page builder settings for that page:
+
+```js
+var Now = new Date(),
+  CurrentDay = Now.getDay(),
+  OnAirTime = new Date(Now.getFullYear(), Now.getMonth(), Now.getDate(), OnAirHour, OnAirMinute), //Set OnAirTime
+  OffAirTime = new Date(Now.getFullYear(), Now.getMonth(), Now.getDate(), OffAirHour, OffAirMinute), //Set OffAirTime
+  OnAir = (Now.getTime() > OnAirTime.getTime() && Now.getTime() < OffAirTime.getTime());
+if (CurrentDay < 4) { //if it's On-Air Day and you're within on-air time
+    document.getElementsByClassName("pineville-live")[0].style.display = "block"; // Show .live-notice instead of the timer
+    document.getElementsByClassName("pineville-archive")[0].style.display = "none"; // Hide .timer class
+}
+else {
+        document.getElementsByClassName("pineville-live")[0].style.display = "none"; // Show .live-notice instead of the timer
+    document.getElementsByClassName("pineville-archive")[0].style.display = "block"; // Hide .timer class
+}
+```
+
+This examples uses `.pineville-live` and `.pineville-archive` in place of `.on-air` and `.off-air`.

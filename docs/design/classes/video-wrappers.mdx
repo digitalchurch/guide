@@ -1,0 +1,39 @@
+---
+title: Video Wrappers
+---
+
+# Video Wrappers
+
+The `.widescreen` class sets up a `<div>` to handle responsive video sizes. It defaults to a 16:9 ratio, but we have some other classes you can use for different ratios.
+
+```css
+.widescreen iframe {
+    aspect-ratio:16/9;
+    height:auto !important;
+    width:100%;
+    }
+
+.cinemascope iframe {
+    aspect-ratio:21/9;
+    height:auto !important;
+    width:100%;
+    }
+
+.standard iframe {
+    aspect-ratio:4/3;
+    height:auto !important;
+    width:100%;
+    }
+
+.square iframe {
+    aspect-ratio:1/1;
+    height:auto !important;
+    width:100%;
+    }
+
+.vertical iframe {
+    aspect-ratio:9/16;
+    height:auto !important;
+    width:100%;
+    }
+```

@@ -1,0 +1,35 @@
+---
+title: Hide a Row When No posts
+---
+
+# Hide a row of content when there are no posts to show in a posts module
+
+This is a neat little trick we use often with the page builder. When there are no upcoming events, for instance, we like to avoid having a permanent section of the website for events that ends up with a big blank area, or even worse, a message like “Sorry, there aren’t any upcoming events. Check back later!”
+
+Nothing says “We don’t have anything fun going on” like that.
+
+So why not hide the whole events section when there are no upcoming events? Or maybe even if you don’t have a sermon or a blog post to display… Well, we can do that. Let’s show you how.
+
+## First, assign the content you want to hide a unique ID
+
+Let’s say you want to hide an entire row of content. (You can also hide a specific module or column if you want to get fancy.) The first thing you’ll have to do is give that row an ID that’s unique to that part of the page. In this case, let’s go with #events. IDs always use the hashtag symbol in the code, although you won’t use the hashtag in the page builder settings. Here’s what you need to do:
+
+
+1. Launch the page builder on the page you want to edit.
+2. Hover over the row you want to hide. Click on the row settings icon.
+3. Go to the Advanced tab of the page builder row settings.
+4. Scroll down to the ID field and enter events in the ID field (without the hashtag symbol).
+
+## Add some code to the page builder posts module
+
+1. While still in the page builder, click on the posts module that is displaying the events.
+2. Go to the Pagination gab of the page builder posts module settings.
+3. In the custom text field, paste the following code:
+```html
+<style type="text/css">
+  body:not(.fl-builder-edit) #events { display:none; }
+</style>
+<div class="builder-notice">This area is hidden to visitors until you have upcoming events.</div>
+```
+
+The content inside the `.builder-notice` will remind you that the section is hidden outside of the page builder. If you decide to use a different ID, just replace it in the second line directly after the hashtag symbol.

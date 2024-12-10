@@ -1,0 +1,34 @@
+---
+title: Embed Latest YouTube Video
+---
+
+# Embed the Latest YouTube Video from your Channel
+
+In some cases, you may want to display the latest YouTube video from your channel without having to log into your website after each upload to update your embed code. This article will show you how to do that. You’ll need to use an HTML module to achieve, as we don’t have any modules with the ability to do exactly this. Once you’ve added your HTML module to your page, use this code:
+
+```html
+<iframe class="latestVideoEmbed" vnum='0' cid="UCwi0kuozit6yhZ_M13Zl9hw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+function loadVideo(iframe) {
+  $.getJSON(reqURL + iframe.getAttribute('cid'),
+    function(data) {
+      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+      console.log(videoNumber);
+      var link = data.items[videoNumber].link;
+      id = link.substr(link.indexOf("=") + 1);
+      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+    }
+  );
+}
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++) {
+  loadVideo(iframes[i]);
+}
+</script>
+```
+
+In the first line, you’ll need to replace the channel ID with your own channel ID (You can find that in the URL of your YouTube Channel).
+
+Replace the Channel ID where you see `cid="UCwi0kuozit6yhZ_M13Zl9hw"`

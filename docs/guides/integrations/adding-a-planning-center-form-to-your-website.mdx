@@ -1,0 +1,29 @@
+---
+title: Planning Center Forms
+---
+
+# Add a Planning Center Form to my Website
+
+Planning Center does not allow us to embed their forms directly in the content of our websites and apps, however, they do provide a script to open it in a modal popup window. Here’s how you can do that:
+
+1. Make sure the Planning Center integration is enabled on your website.
+2. In your dashboard, visit the **Settings > Integrations** page and make sure the Planning Center integration is enabled. This will add the Planning Center script to your header.
+
+:::note
+You can also manually add the script into your `<head>` if you prefer.
+:::
+
+3. Add the Planning Center modal URL parameter to your link.
+4. In the page builder or block editor, you can add a button, image, or text link to your form. At the end of the form URL, add `?open-in-church-center-modal=true` to the end of the URL.
+5. Publish your post or page.
+
+:::tip Always Test Your Changes!
+Also, be sure to test your results in an incognito/private window.
+:::
+
+## Planning Center Integration Script
+
+```html Planning Center Integration Script
+<!-- Planning Center Integration Script -->
+<script src="https://js.churchcenter.com/modal/v1"></script>
+```

@@ -1,0 +1,84 @@
+---
+title: Control Line Breaks
+slug: line-breaks
+sidebar_position: 13
+---
+
+# Control Line Breaks
+
+Line breaks can be tricky to work with on websites. This is mostly because websites have to adapt to multiple screen sizes and container widths, so breaking a line or word may not look the same on desktop than it does on mobile. Here are some tips for handling them. 
+
+## Within a Long Word or Link
+
+Sometimes you might have a really long string of text with no spaces. The browser might determine where to break the word, and sometimes you might not like where it breaks it. If you want to suggest a specific spot for the break, use the `<wbr>` tag in it.
+
+```html
+  <p>This is a very long URL: https://www.example.com/very<wbr>long<wbr>path<wbr>to<wbr>resource</p>
+  <p>This is a very long compoundword<wbr>that<wbr>needs<wbr>breaking.</p>
+  <p>Contact us at: verylongemail<wbr>@example<wbr>.com</p>
+```
+
+## Between Individual Words
+
+Sometimes you have a block of text in a heading or paragraph and you want to prevent the browser from breaking the lines for a specific span of text. For example, let's say your heading was something like this:
+
+```html
+<h1>It's Time to Make a Difference</h1>
+```
+
+But let's say because of the size of the font and/or the width of the container, the line breaks were awkward. Maybe it ends up like this:
+
+```html
+It's Time
+to Make A
+Difference
+```
+
+You might want the line break to happen in a different spot, and you might be tempted to use a manual line break tag there, like this:
+
+```html
+It's Time</br>
+to Make</br>
+A Difference</br>
+```
+
+But what heppens when the screen get's smaller? Then the browser is forced to make some line breaks like this:
+
+```html
+It's
+Time
+to Make
+A
+Difference
+```
+
+### The Solution
+
+The better solution is a special class that we've added to our design system that defined a span as `no-break`. Here's the code:
+
+```css
+.no-break {
+   white-space: nowrap;
+}
+```
+
+And when you apply it to a span of text, it will look like this:
+
+```html
+<h1>It's Time <span class="no-break">to Make</span>A Difference</h1>
+```
+
+This allows for the text to break however it needs to, but to prioritize keeping "To Make" together. You might end up with any of the following:
+
+```html
+It's Time to Make
+A Difference
+```
+
+```html
+It's Time
+to Make
+A Difference
+```
+
+This is just a general tip that may or may not work in your specific situation, but give it a try and be sure to test it out.

@@ -1,0 +1,8 @@
+{
+  "label": "Discover Church",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Theme Layouts display dynamic content like your post archive or single post content."
+  }
+}

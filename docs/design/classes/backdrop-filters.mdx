@@ -1,0 +1,40 @@
+---
+title: Backdrop Filters
+slug: backdrop-filters
+sidebar_position: 10
+---
+
+# Backdrop Filters
+
+backdrop filters allow you to change the way the background behind an element is displayed. They are handy for making a background image greyscale, inverting the colors, or blurring the background with a frosted glass type effect. We've added a desaturate backdrop filter to our utlitity classes so you can easily manipulate your background images.
+
+### Desaturate
+
+A simple one to begin with is a desaturate backdrop filter. This simple makes the image appear black and white. This is incredibly useful when using a color overlay to help ensure the foreground text stands out from the background. This way, if you add a blue semi-transparent overlay, for instance, the background colors won't look unnatural under the blue overlay.
+
+Simply add the class `.backdrop-saturate-0` to your page builder row to see it in action.
+
+For reference, this is the CSS code we are using:
+
+```css title="utilities.css"
+body:not(.fl-builder) .backdrop-saturate-0,
+.backdrop-saturate-0 .fl-row-content-wrap:after,
+.backdrop-saturate-0 .fl-col-content::after {
+    -webkit-backdrop-filter: saturate(0);
+    backdrop-filter: saturate(0);
+}
+```
+
+### Blur
+
+We've also added a blur filter effect so you can get the frosted glass effect. Add the `.backdrop-blur` class to activate that effect.
+
+```css title="utilities.css"
+body:not(.fl-builder) .backdrop-blur,
+.backdrop-blur .fl-row-content-wrap:after,
+.backdrop-blur .fl-col-content::after {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+```
+

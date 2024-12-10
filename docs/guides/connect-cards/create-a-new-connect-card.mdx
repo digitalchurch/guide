@@ -1,0 +1,40 @@
+---
+title: Create a New Connect Card
+sidebar_position: 1
+---
+
+# Create a New Connect Card
+
+import ReactPlayer from 'react-player';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<div className='player-wrapper'>
+<ReactPlayer url="https://vimeo.com/678201930"
+    width="100%"
+    height="100%"
+    controls={true}
+    playing={true}
+    muted={true}
+     />
+</div>
+
+To create a new connect card using one of the methods below:
+
+<Tabs>
+  <TabItem value="dashboard" label="Dashboard" default>
+    In the dashboard menu, select connect cards. Then use the <b>Add New</b> button at the top of the page.
+  </TabItem>
+  <TabItem value="toolbar" label="Toolbar">
+    Hover over the <b>+ New</b> item in the toolbar and select <b>Connect Card</b>.
+  </TabItem>
+  <TabItem value="command" label="Command Menu">
+    Use <code>⌘</code> + <code>K</code> to open the command bar and type "New Connect Card" and hit return.
+  </TabItem>
+</Tabs>
+
+1. Give your connect card a **Title** and add some content to the card with the block editor.
+2. Set the **Featured Image** and the **Cover Image** for the connect card.
+3. Add a **short description** to appear under the title of the connect card.
+4. Add an optional **call to action** using a button or form, or even set the connect card to redirect to a specific URL.
+5. **Publish** your connect card and then check the frontend of your website to make sure it is visible.

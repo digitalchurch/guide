@@ -1,0 +1,19 @@
+---
+title: Visibility
+---
+
+# Visibility
+
+These utility classes are used for functionality like hiding and showing content to specific users.
+
+### Hide Outside of Builder
+
+`body:not(.fl-builder-edit)` This class will keep the contents hidden unless the builder is in edit mode. This way you can add CSS that hides certain elements but can still be accessed when the builder is editing.
+
+### Hide to all users except Administrators
+
+`.admin-visible` This class is only visible to those with Administrative Access (editors, administrators). Anonymous (non-logged-in) users and subscriber-level users won’t see content with this class.
+
+### Hide to everyone except Page Builders
+
+`.builder-notice` This class is only visible when the page builder is active. We use this to give hints about how some of our templates are set up to work in the page builder.

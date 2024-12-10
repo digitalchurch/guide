@@ -1,0 +1,26 @@
+---
+title: Blur Filter Background
+---
+
+# Create a Blur Filter Background
+
+Often times, it’s nice to apply a blur background filter to an area. For instance, maybe you have a row with a video background, and you’d like to have a white blur background behind the text to help separate it from the video background. We’ve added two custom css classes to our platform to help you quickly achieve that kind of affect.
+
+## Assign a standard blur affect background to a column or row
+
+1. In the page builder, open the settings for the row or column you with to edit. (Column settings show up attached to the individual modules)
+2. Go to the Advanced tab.
+3. In the class field, enter blur-filter-bg for a frosted glass effect. You can change the look of it by assigning a specific background color as well. Just be sure to lower the transparency of the background color so the content behind it can show through.
+4. Use custom CSS to create your own blur filter effect
+
+In the page builder, assign a unique class instead of the pre-defined classes mentioned above. For example, it could be blur-filter-bg-custom or whatever you’d like to call it. Just try to not be too generic, as it could conflict with other code on the site.
+With the page builder still open, click on the dropdown menu in the top left corner and then select Custom CSS & JS.
+In the CSS tab, enter the custom CSS for your class. Here’s what we used to create the default blur filters. Feel free to use this as a starting point. Just make sure your class name is the same as the custom class name you used in your row or column.
+
+```css
+.blur-filter-bg,
+.fl-row.blur-filter-bg > .fl-row-content-wrap:after {
+ -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+```

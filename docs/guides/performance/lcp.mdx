@@ -1,0 +1,78 @@
+---
+title: LCP
+slug: lcp
+sidebar_position: 3
+---
+
+# Largest Contentful Paint
+
+import ReactPlayer from 'react-player';
+
+<div className='player-wrapper'>
+<ReactPlayer url="https://www.youtube.com/watch?v=JIuVMH_7DGY"
+    width="100%"
+    height="100%"
+    controls={true}
+    playing={true}
+    muted={true}
+     />
+</div>
+
+We are working on writing our own guides for this section. In the meantime, this video series from the makers of Perfmatters and Kyle Deusen at The Admin Bar is a primary reference for us.
+
+### Quick Notes
+
+- Server response time (TTFB), including HTML doc size has a huge impact on LCP. The further the distance, the more it matters. Don’t skip this! See previous video on TTFB, caching, etc.
+- Get LCP under 2.5 seconds or less. Remember, Google uses throttled 4G mobile connection.
+- Minify your JS and CSS.
+- Remove unused CSS.
+- Delay unused JS until it’s needed on user interaction.
+- Defer JS to help eliminate render-blocking resources and avoid chaining critical requests.
+- Host your fonts locally, add swap, and preload them.
+- Decrease any large resources. Image optimization, fixing large font libraries, etc.
+- Lazy load any images below the fold.
+- Preload your LCP image and make sure to exclude images above the fold from lazy loading. You can also use fetch priority.
+- Disable JS/CSS and or entire plugins from loading where they shouldn’t with a tool like the Script Manager.
+- Take advantage of speculative loading techniques.
+
+### Lazy loading
+
+As a default, enable lazy loading and set it to ignore the first two images on each page so it doesn't lazy load above the fold.
+
+- Images: true
+- Exclude Leading Images: 2
+- iFrames and Videos: true
+- YouTube Preview Thumbnails: true
+- Exclude from Lazy Loading:
+```
+id="livestream"
+class="no-lazy"
+```
+- Threshold: 240px
+- DOM Monitoring: false
+- Add Missing Image Dimensions: true
+- Fade In: true
+- CSS Background Images: true
+- Background Selectors:
+```
+.fl-row-content-wrap
+.fl-col-content
+```
+
+### Minify CSS & JS
+
+Go ahead any minify CSS and JS in perfmatters. This rarely causes any issues.
+
+### Reduce Unused CSS
+
+- Enable Reduce Unused CSS
+- Set the type to **File**.
+- Stylesheet behavior: Delay
+
+### Delay JS
+
+Go ahead and delay all scripts. Use the quick exclusions like GRavity Forms and Kadence Menu.
+
+### Defer Javascript
+
+This helps with Eliminate Render Blocking Resources.

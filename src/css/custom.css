@@ -1,0 +1,201 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  --neutral-50: var(--slate-50);
+  --neutral-100: var(--slate-100);
+  --neutral-200: var(--slate-200);
+  --neutral-300: var(--slate-300);
+  --neutral-400: var(--slate-400);
+  --neutral-500: var(--slate-500);
+  --neutral-600: var(--slate-600);
+  --neutral-700: var(--slate-700);
+  --neutral-800: var(--slate-800);
+  --neutral-900: var(--slate-900);
+  --neutral-950: var(--slate-950);
+
+  --brand-50: #ebecffff;
+  --brand-100: #c2c6ffff;
+  --brand-200: #9aa0feff;
+  --brand-300: #4854feff;
+  --brand-400: #0f1ffeff;
+  --brand-500: #0110dfff;
+  --brand-600: #010ca2ff;
+  --brand-700: #010765ff;
+  --brand-800: #00043dff;
+  --brand-900: #000114ff;
+
+  --ifm-color-primary: var(--brand-500);
+  --ifm-color-primary-dark: var(--brand-600);
+  --ifm-color-primary-darker: var(--brand-700);
+  --ifm-color-primary-darkest: var(--brand-800);
+  --ifm-color-primary-light: var(--brand-400);
+  --ifm-color-primary-lighter: var(--brand-300);
+  --ifm-color-primary-lightest: var(--brand-200);
+  --ifm-code-font-size: 95%;
+  --ifm-footer-background-color: rgba(255, 255, 255, 0.2);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--brand-300);
+  --ifm-color-primary-dark: var(--brand-200);
+  --ifm-color-primary-darker: var(--brand-100);
+  --ifm-color-primary-darkest: var(--brand-50);
+  --ifm-color-primary-light: var(--brand-400);
+  --ifm-color-primary-lighter: var(--brand-500);
+  --ifm-color-primary-lightest: var(--brand-600);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-footer-background-color: rgba(0, 0, 0, 0.2);
+
+  --neutral-50: var(--slate-950);
+  --neutral-100: var(--slate-900);
+  --neutral-200: var(--slate-800);
+  --neutral-300: var(--slate-700);
+  --neutral-400: var(--slate-600);
+  --neutral-500: var(--slate-500);
+  --neutral-600: var(--slate-400);
+  --neutral-700: var(--slate-300);
+  --neutral-800: var(--slate-200);
+  --neutral-900: var(--slate-100);
+  --neutral-950: var(--slate-50);
+}
+
+body {
+  height: unset !important;
+  background-color: rgba(255,255,255,0);
+  background-image: url('https://comingsoon.digitalchurch.app/wp-content/uploads/sites/25/2023/04/bbblurry-3.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background: transparent;
+  padding:0;
+}
+
+.navbar__inner {
+  background-color:unset !important;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  padding:8px 16px;
+}
+
+.navbar-sidebar {
+  background-color:unset !important;
+  background: color-mix(in srgb, var(--neutral-50) 98%, transparent) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+nav.menu {
+  font-size: .9rem;
+}
+
+/* ul.theme-doc-sidebar-menu li:nth-of-type(2),
+ul.theme-doc-sidebar-menu li:nth-of-type(4),
+ul.theme-doc-sidebar-menu li:nth-of-type(14) {
+  border-bottom: 1px solid var(--neutral-300);
+  padding-bottom: 4px;
+} */
+
+article img {
+  margin:24px 0;
+}
+
+.menu__link {
+  line-height:1.2rem;
+}
+
+.menu__caret:before {
+  width:.75rem;
+  height:.75rem;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.2rem 1.2rem;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color:unset;
+  background: color-mix(in srgb, var(--neutral-500) 10%, transparent) !important;
+}
+
+.menu__link:hover, .menu__caret:hover {
+  background: color-mix(in srgb, var(--neutral-500) 10%, transparent) !important;
+  }
+
+.card {
+  background:unset;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent) !important;
+}
+
+@media (min-width: 997px) {
+  .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+  padding: 1rem !important;
+  }
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  margin-bottom:24px;
+  background-color:var(--slate-950);
+  border-radius:12px;
+}
+
+.player-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius:12px;
+}
+
+article img {
+  border-radius:12px;
+}
+
+.footer {
+  padding: 64px 12px !important;
+  background: color-mix(in srgb, var(--neutral-50) 50%, transparent);
+  font-size:.8rem;
+}
+
+li.footer__item img {
+  margin-top:-24px;
+}
+
+.tabs-container {
+  border: 1px solid var(--neutral-200);
+  border-radius:8px;
+}
+
+.tabs-container > ul {
+  background: color-mix(in srgb, var(--neutral-100) 70%, transparent);
+  border-radius: 12px 12px 0 0;
+  padding:0px 12px
+}
+
+.tabs-container > div {
+  padding:24px;
+  background: color-mix(in srgb, var(--neutral-50) 70%, transparent);
+  margin-top:0 !important;
+  border-radius: 0 0 12px 12px;
+}
