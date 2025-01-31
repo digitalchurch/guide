@@ -60,7 +60,8 @@ const config = {
   ],
 
   plugins: [
-    require.resolve('docusaurus-plugin-image-zoom')
+    require.resolve('docusaurus-plugin-image-zoom'),
+    require.resolve('./src/plugins/webpack-plugin')
   ],
 
   themeConfig:
