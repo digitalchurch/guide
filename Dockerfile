@@ -1,8 +1,11 @@
 FROM node:20-slim
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package*.json ./
+
+# Install nodemon globally
+RUN npm install -g nodemon
 
 RUN npm install
 
@@ -10,4 +13,5 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"] 
+# Use nodemon to run the app
+CMD ["nodemon", "--exec", "npm start", "--watch", ".", "--ignore", "node_modules/"] 
