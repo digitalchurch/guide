@@ -1,0 +1,18 @@
+---
+title: Change Header Logo URL
+slug: change-header-logo-url
+sidebar_position: 15
+---
+
+# Change the Header Logo URL
+
+Occassionally, you may want to change the URL of the header logo. If your site is using Kadence Theme, there is a simple PHP snippet that can be used to change the URL of the header logo. You will have to reach out to our team to help you add this snippet.
+
+### PHP Snippet
+
+```php
+add_filter('kadence_logo_url', 'change_logo_url');
+function change_logo_url($logo_url) {
+    return 'https://example.com/logo.png';
+}
+```
