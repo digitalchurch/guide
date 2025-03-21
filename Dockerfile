@@ -2,16 +2,16 @@ FROM node:20-slim
 
 WORKDIR /usr/src/app
 
+# Copy package files first
 COPY package*.json ./
 
-# Install nodemon globally
-RUN npm install -g nodemon
+# Clean install dependencies
+RUN npm ci
 
-RUN npm install
-
+# Copy the rest of the application
 COPY . .
 
 EXPOSE 3000
 
-# Use nodemon to run the app
-CMD ["nodemon", "--exec", "npm start", "--watch", ".", "--ignore", "node_modules/"] 
+# Run the development server directly (removing nodemon)
+CMD ["npm", "start"] 
