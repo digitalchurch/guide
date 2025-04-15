@@ -1,0 +1,8 @@
+{
+  "label": "Announcements",
+  "position": 20,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to create and manage your Digital Church announcements."
+  }
+}
