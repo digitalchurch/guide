@@ -1,30 +1,25 @@
 # Launching Your Site
 
-Launching your site is quick and easy. If you’d like, we will do all of this for you. Contact us via chat and we’ll take care of it. If you’d rather do it yourself follow this guide exactly. There are no optional steps.
+When you are ready to launch your website, visit [digitalchurch.com/launch](https://digitalchurch.com/launch) and complete our launch request form. Our team will review your domain and DNS settings and launch your website as quickly as possible.
 
 ## Purchase a domain
 
 If you don’t already own a domain you can purchase a domain from any provider. We believe that it is vitally important for our clients to own their own domain. We recommend Google Domains. If you use Google Domains, you’ll be able to easily grant access to us to manage your domain settings without giving us your own Google credentials.
 
-## Pointing Your Domain to Digital Church
+## DNS Records
 
-First we need to set up an account with CloudFlare https://cloudflare.com/ to manage your DNS. It is free and offers added security. Our IP Address changes often so you CANNOT use A records to point to our sites.
+Our team will set up your DNS records using Cloudflare. We can fully manage your DNS for in our own Cloudflare account, or you may set up a Cloudflare account and [invite our team to access your domain](https://digitalchurch.guide/guides/domains/cloudflare-invitation). Our IP Address changes often so you CANNOT use Digital Church without granting us ongoing access to your domain DNS records.
 
-:::warning
-PLEASE NOTE: THIS IS NOT AN OPTIONAL STEP, CLOUDFLARE MUST BE SETUP. IF YOU WOULD LIKE, WE CAN DO THIS FOR YOU.
-:::
-
-1. Log in to your domain registrar. This is the place where you purchased your domain. Some example of registrars are godaddy.com, hover.com, domains.google.com.
-2. Navigate to the Domain sections of your register. This could be called DNS Manager, Zone File Settings, Manager Domains, Domain Manager or something similar.
-3. Write down all the current records so that you have them just incase you need to undo any of the changes.
-4. We need to add four new CNAME records to your domain.
+### Records we will set
 
 | Type | Name | Target | TTL | Proxy Status |
 |---|---|---|---|---|
+| A | @ | {ip address} | Auto | DNS Only (Grey Cloud) |
+| A | staging | {ip address} | Auto | DNS Only (Grey Cloud) |
+| CNAME | www | @ | Auto | DNS Only (Grey Cloud) |
+| CNAME | www.staging | @ | Auto | DNS Only (Grey Cloud) |
 | CNAME | _acme-challenge | _acme-challenge.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
 | CNAME | _acme-challenge.www | _acme-challenge.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
-| CNAME | www | @ | Auto | DNS Only (Grey Cloud) |
-| CNAME | @ | your.digitalchurch.app | Auto | DNS Only (Grey Cloud) |
 
 ## Setting up your CloudFlare SSL Edge Certificate
 
