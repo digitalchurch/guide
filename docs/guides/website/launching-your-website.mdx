@@ -16,20 +16,7 @@ If you don't already own a domain you can purchase a domain from any provider. W
 
 Our team will set up your DNS records using Cloudflare. We can fully manage your DNS for in our own Cloudflare account, or you may set up a Cloudflare account and [invite our team to access your domain](https://digitalchurch.guide/guides/domains/cloudflare-invitation). Our IP Address changes often so you CANNOT use Digital Church without granting us ongoing access to your domain DNS records.
 
-### Records we will set
-
-| Type | Name | Target | TTL | Proxy Status |
-|---|---|---|---|---|
-| A | `@` | ip address | Auto | DNS Only (Grey Cloud) |
-| A | `staging` | ip address | Auto | DNS Only (Grey Cloud) |
-| CNAME | `www` | `@` | Auto | DNS Only (Grey Cloud) |
-| CNAME | `www.staging` | `@` | Auto | DNS Only (Grey Cloud) |
-| CNAME | `_acme-challenge` | `_acme-challenge.digitalchurch.app` | Auto | DNS Only (Grey Cloud) |
-| CNAME | `_acme-challenge.www` | `_acme-challenge.digitalchurch.app` | Auto | DNS Only (Grey Cloud) |
-
-## Setting up your CloudFlare SSL Edge Certificate
-
-Once you've set up your DNS records, visit the SSL/TLS tab of your CloudFlare account and set Your SSL/TLS encryption mode to Full (strict).
+For more information on DNS records, see [DNS Records](https://digitalchurch.guide/guides/domains/dns-records).
 
 ## Cloning your site
 
