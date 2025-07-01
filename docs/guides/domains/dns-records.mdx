@@ -15,9 +15,11 @@ Our team will set up your DNS records using Cloudflare. We can fully manage your
 | A | `@` | *ip address* | Auto | Primary IP Address |
 | A | `staging` | *ip address* | Auto | Staging IP Address |
 | CNAME | `www` | `@` | Auto | Redirects to your domain |
-| CNAME | `www.staging` | *staging.yourdomain.com* | Auto | Redirects to staging for SSL/TLS |
+| CNAME | `www.staging` | `staging.@` | Auto | Redirects to staging for SSL/TLS |
 | CNAME | `_acme-challenge` | `_acme-challenge.digitalchurch.app` | Auto | Used for SSL/TLS certificate |
 | CNAME | `_acme-challenge.www` | `_acme-challenge.digitalchurch.app` | Auto | Used for SSL/TLS certificate |
+| CNAME | `_acme-challenge.staging` | `_acme-challenge.digitalchurch.app` | Auto | Used for SSL/TLS certificate |
+| CNAME | `_acme-challenge.www.staging` | `_acme-challenge.digitalchurch.app` | Auto | Used for SSL/TLS certificate |
 | TXT | ...pm._domainkey | "k=rsa;p=..." | Auto | Postmark Email Verification |
 | CNAME | `pm-bounces` | `pm.mtasv.net` | Auto | Postmark Email Bounces |
 
