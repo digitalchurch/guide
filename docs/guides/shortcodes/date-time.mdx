@@ -1,0 +1,189 @@
+---
+title: Date & Time
+slug: date-time
+sidebar_position: 2
+---
+
+# Date & Time Shortcode
+
+The `[date]` shortcode provides flexible date and time display functionality with support for multiple formats, date sources, and timezone customization.
+
+## Basic Usage
+
+```html
+[date]
+```
+
+**Output:** September 22, 2025
+
+## Parameters
+
+### `format` 
+Customize the date/time display format using [PHP date format strings](https://www.php.net/manual/en/datetime.format.php).
+
+**Default:** `F j, Y` (September 22, 2025)
+
+### `source`
+Choose the date source to display.
+
+**Options:**
+- `current` - Current date/time (default)
+- `published` - Post published date
+- `modified` - Post last modified date
+
+### `timezone`
+Override the default WordPress site timezone.
+
+**Example:** `America/New_York`, `Europe/London`, `Australia/Sydney`
+
+## Format Examples
+
+### Date Only
+```html
+[date]                           → September 22, 2025
+[date format="l, F j, Y"]        → Monday, September 22, 2025
+[date format="m/d/Y"]            → 09/22/2025
+[date format="M j, Y"]           → Sep 22, 2025
+[date format="Y-m-d"]            → 2025-09-22
+```
+
+### Date with Time
+```html
+[date format="F j, Y g:i a"]     → September 22, 2025 10:41 pm
+[date format="l, F j, Y H:i:s"]  → Monday, September 22, 2025 22:41:45
+[date format="m/d/Y h:i A"]      → 09/22/2025 10:41 PM
+[date format="Y-m-d H:i"]        → 2025-09-22 22:41
+```
+
+### Time Only
+```html
+[date format="g:i a"]            → 10:41 pm
+[date format="H:i:s"]            → 22:41:45
+[date format="h:i A"]            → 10:41 PM
+```
+
+### Special Formats
+```html
+[date format="c"]                → 2025-09-22T22:41:45+00:00 (ISO 8601)
+[date format="r"]                → Mon, 22 Sep 2025 22:41:45 +0000 (RFC 2822)
+[date format="U"]                → 1758593305 (Unix timestamp)
+```
+
+## Source Examples
+
+### Current Date/Time
+```html
+[date]                           → Current date
+[date format="F j, Y g:i a"]     → Current date and time
+```
+
+### Post Published Date
+```html
+[date source="published"]                    → Post publish date
+[date source="published" format="M j, Y"]   → Sep 22, 2025
+[date source="published" format="F j, Y \a\t g:i a"] → September 22, 2025 at 10:41 pm
+```
+
+### Post Modified Date
+```html
+[date source="modified"]                     → Post last modified date
+[date source="modified" format="M j, Y"]    → Sep 22, 2025
+[date source="modified" format="F j \a\t g:i a"] → September 22 at 10:41 pm
+```
+
+## Timezone Examples
+
+### Custom Timezones
+```html
+[date timezone="America/New_York"]           → Eastern Time
+[date timezone="America/Los_Angeles"]        → Pacific Time
+[date timezone="Europe/London"]              → GMT/BST
+[date timezone="Australia/Sydney"]           → Australian Eastern Time
+```
+
+### Combined Parameters
+```html
+[date source="published" format="l, F j, Y g:i a" timezone="America/New_York"]
+→ Monday, September 22, 2025 6:41 pm (if site is UTC)
+```
+
+## Common Use Cases
+
+### Service Times
+```html
+Sunday Service: [date format="l \a\t g:i a"]
+```
+**Output:** Sunday Service: Monday at 10:41 pm
+
+### Event Dates
+```html
+Published on [date source="published" format="F j, Y"]
+```
+**Output:** Published on September 22, 2025
+
+### Last Updated
+```html
+Last updated: [date source="modified" format="M j, Y \a\t g:i a"]
+```
+**Output:** Last updated: Sep 22, 2025 at 10:41 pm
+
+### Copyright Year
+```html
+© [date format="Y"] Your Church Name
+```
+**Output:** © 2025 Your Church Name
+
+### Full Timestamp
+```html
+Generated on [date format="l, F j, Y \a\t g:i:s a T"]
+```
+**Output:** Generated on Monday, September 22, 2025 at 10:41:45 pm UTC
+
+## PHP Date Format Reference
+
+### Common Format Characters
+
+| Character | Description | Example |
+|-----------|-------------|---------|
+| `Y` | 4-digit year | 2025 |
+| `y` | 2-digit year | 25 |
+| `F` | Full month name | September |
+| `M` | Short month name | Sep |
+| `m` | Month with leading zeros | 09 |
+| `n` | Month without leading zeros | 9 |
+| `j` | Day without leading zeros | 22 |
+| `d` | Day with leading zeros | 22 |
+| `l` | Full day name | Monday |
+| `D` | Short day name | Mon |
+| `g` | 12-hour without leading zeros | 10 |
+| `G` | 24-hour without leading zeros | 22 |
+| `h` | 12-hour with leading zeros | 10 |
+| `H` | 24-hour with leading zeros | 22 |
+| `i` | Minutes | 41 |
+| `s` | Seconds | 45 |
+| `a` | am/pm lowercase | pm |
+| `A` | AM/PM uppercase | PM |
+
+### Escaping Text
+Use backslashes to include literal text in your format:
+
+```html
+[date format="l, F j, Y \a\t g:i a"]
+→ Monday, September 22, 2025 at 10:41 pm
+```
+
+## Error Handling
+
+The shortcode includes built-in error handling:
+
+- **Invalid `source`**: Falls back to `current`
+- **Invalid `timezone`**: Falls back to WordPress site timezone  
+- **Invalid `format`**: Falls back to default format (`F j, Y`)
+- **Missing post data**: Falls back to current time when using `published` or `modified` outside of post context
+
+## Notes
+
+- The shortcode respects your WordPress site's timezone settings by default
+- Post dates are retrieved in GMT and converted to the specified timezone
+- All output is properly escaped for security
+- The shortcode works in posts, pages, widgets, and template files where shortcodes are processed
