@@ -1,0 +1,79 @@
+---
+title: Form Integrations (Elexio & Planning Center)
+sidebar_position: 3
+---
+
+# Using Elexio or Planning Center Forms
+
+The Form module in the page builder supports three form providers: **Digital Church** (built-in), **Elexio**, and **Planning Center**. This means you can embed forms from your church management system directly on your website — no custom code needed.
+
+## Choosing a Form Provider
+
+1. Open the page builder on the page where you want to add a form.
+2. Drag a **Form** module onto your layout.
+3. In the module settings, find the **Form Provider** dropdown.
+4. Select your provider:
+   - **Digital Church** — Uses your built-in forms (default)
+   - **Elexio** — Embeds a form from your Elexio account
+   - **Planning Center** — Opens a Planning Center form in a popup modal
+
+The settings below the dropdown will change depending on which provider you select.
+
+---
+
+## Elexio Forms
+
+Elexio forms are embedded directly into your page content. When a visitor loads the page, the form appears inline — no popups or redirects.
+
+### How to Add an Elexio Form
+
+1. Select **Elexio** as the Form Provider.
+2. Enter your **Form ID** in the field that appears.
+   - This is a long ID that looks like: `4d42b011-c92d-4f4f-a8cc-77e6b2b80b32`
+3. Save the module and publish your page.
+
+### Finding Your Elexio Form ID
+
+1. Log into your Elexio account.
+2. Navigate to the form you want to embed.
+3. Look for the **embed code** or **form ID** in the form's settings or sharing options.
+4. Copy the form ID (the long string of letters and numbers) and paste it into the Form module.
+
+:::tip Not sure where to find it?
+If you can't locate the form ID in Elexio, reach out to our support team and we'll help you find it.
+:::
+
+---
+
+## Planning Center Forms
+
+Planning Center doesn't allow forms to be directly embedded on external websites. Instead, the Form module creates a button that opens your Planning Center form in a **popup modal window** — the visitor stays on your website the whole time.
+
+### How to Add a Planning Center Form
+
+1. Select **Planning Center** as the Form Provider.
+2. Enter the **Form URL** — this is the full link to your Planning Center form.
+   - It usually looks like: `https://your-church.churchcenter.com/people/forms/123`
+3. Optionally, customize the **Button Text** (defaults to "Complete Form").
+4. Save the module and publish your page.
+
+### Finding Your Planning Center Form URL
+
+1. Log into [Planning Center People](https://people.planningcenteronline.com/).
+2. Go to **Forms** in the left sidebar.
+3. Click on the form you want to use.
+4. Copy the URL from your browser's address bar, or look for a **Share** or **Public URL** option.
+
+:::note Planning Center Integration
+Make sure the Planning Center integration is enabled on your website. Go to **Settings > Integrations** in your dashboard to verify. This adds the required Planning Center script to your site.
+:::
+
+:::tip Always Test Your Changes!
+After adding your form, preview the page and test the form to make sure it opens and submits correctly. Try it in an incognito/private window to see what visitors will experience.
+:::
+
+---
+
+## Switching Providers
+
+You can change the form provider at any time by editing the Form module and selecting a different option from the **Form Provider** dropdown. Your previous settings for each provider are preserved — so if you switch from Elexio to Planning Center and back, your Elexio Form ID will still be there.
