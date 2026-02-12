@@ -37,3 +37,31 @@ The `.widescreen` class sets up a `<div>` to handle responsive video sizes. It d
     width:100%;
     }
 ```
+
+## Video Border Radius
+
+Add rounded corners to embedded videos using these utility classes. They apply the border radius to the container, the iframe, and lazy-loaded YouTube placeholders.
+
+| Class | Radius |
+|-------|--------|
+| `.video-border-rad-0` | 0px |
+| `.video-border-rad-xs` | 4px |
+| `.video-border-rad-sm` | 8px |
+| `.video-border-rad-md` | 12px |
+| `.video-border-rad-lg` | 16px |
+| `.video-border-rad-xl` | 20px |
+| `.video-border-rad-2x` | 24px |
+
+### Usage
+
+Add the class to your video wrapper element:
+
+```html
+<div class="widescreen video-border-rad-lg">
+    <iframe src="https://www.youtube.com/embed/..." ...></iframe>
+</div>
+```
+
+These classes work with:
+- Standard iframes (YouTube, Vimeo, etc.)
+- Perfmatters lazy-loaded YouTube embeds
