@@ -1,0 +1,102 @@
+---
+title: Grid
+slug: grid
+sidebar_position: 17
+---
+
+# Grid
+
+Utility classes for CSS Grid layouts, including column definitions, spanning, and gap control.
+
+## Grid Columns
+
+Define the number of columns in a grid container. Uses a 12-column system.
+
+| Class | Columns |
+| --- | --- |
+| `.grid-cols-1` | 1 column |
+| `.grid-cols-2` | 2 columns |
+| `.grid-cols-3` | 3 columns |
+| `.grid-cols-4` | 4 columns |
+| `.grid-cols-5` | 5 columns |
+| `.grid-cols-6` | 6 columns |
+| `.grid-cols-7` | 7 columns |
+| `.grid-cols-8` | 8 columns |
+| `.grid-cols-9` | 9 columns |
+| `.grid-cols-10` | 10 columns |
+| `.grid-cols-11` | 11 columns |
+| `.grid-cols-12` | 12 columns |
+
+### Usage
+
+```html
+<div class="grid grid-cols-3 gap-md">
+  <div>Column 1</div>
+  <div>Column 2</div>
+  <div>Column 3</div>
+</div>
+```
+
+## Column Span
+
+Control how many columns a grid item spans.
+
+| Class | Span |
+| --- | --- |
+| `.col-span-1` | Span 1 column |
+| `.col-span-2` | Span 2 columns |
+| `.col-span-3` | Span 3 columns |
+| `.col-span-4` | Span 4 columns |
+| `.col-span-5` | Span 5 columns |
+| `.col-span-6` | Span 6 columns |
+| `.col-span-7` | Span 7 columns |
+| `.col-span-8` | Span 8 columns |
+| `.col-span-9` | Span 9 columns |
+| `.col-span-10` | Span 10 columns |
+| `.col-span-11` | Span 11 columns |
+| `.col-span-12` | Span 12 columns (full width) |
+
+## Column End
+
+Control where a grid item ends.
+
+| Class | Ends at column line |
+| --- | --- |
+| `.col-end-1` through `.col-end-12` | Column line 1–12 |
+
+### Example: Spanning Layout
+
+```html
+<div class="grid grid-cols-12 gap-sm">
+  <div class="col-span-8">Main content (8 cols)</div>
+  <div class="col-span-4">Sidebar (4 cols)</div>
+</div>
+```
+
+## Gap
+
+Control the gap between grid (or flex) items.
+
+### Fixed Gap
+
+| Class | Size |
+| --- | --- |
+| `.gap-1` | 0.25rem (4px) |
+| `.gap-2` | 0.5rem (8px) |
+| `.gap-3` | 0.75rem (12px) |
+| `.gap-4` | 1rem (16px) |
+
+### Token-based Gap
+
+| Class | Value |
+| --- | --- |
+| `.gap-xs` | var(--spacing-xs) |
+| `.gap-sm` | var(--spacing-sm) |
+| `.gap-md` | var(--spacing-md) |
+| `.gap-lg` | var(--spacing-lg) |
+| `.gap-xl` | var(--spacing-xl) |
+| `.gap-xxl` | var(--spacing-xxl) |
+
+:::tip
+Prefer the token-based gap classes (`.gap-xs` through `.gap-xxl`) for consistency with the design system's spacing scale.
+:::

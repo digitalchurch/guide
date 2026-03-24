@@ -1,0 +1,109 @@
+---
+title: Borders
+slug: borders
+sidebar_position: 7
+---
+
+# Borders
+
+Utility classes for controlling border styles, colors, and border radius on elements.
+
+## Border Styles
+
+| Class | Description |
+| --- | --- |
+| `.border-solid` | Solid border style |
+| `.border-dashed` | Dashed border style |
+| `.border-dotted` | Dotted border style |
+| `.border-double` | Double border style |
+| `.border-hidden` | Hidden border style |
+| `.border-none` | No border |
+| `.border-black` | 1px solid black border |
+
+## Border Radius
+
+These classes apply a border radius to Beaver Builder rows, columns, and photo modules. They use the design system's radius tokens.
+
+| Class | Radius Token |
+| --- | --- |
+| `.border-rad-0` | var(--radius-0) |
+| `.border-rad-xs` | var(--radius-xs) |
+| `.border-rad-sm` | var(--radius-sm) |
+| `.border-rad-md` | var(--radius-md) |
+| `.border-rad-lg` | var(--radius-lg) |
+| `.border-rad-xl` | var(--radius-xl) |
+| `.border-rad-2x` | var(--radius-xxl) |
+| `.rounded-full` | Fully rounded (pill/circle) |
+
+### Usage
+
+Add the class to a Beaver Builder row, column, or photo module:
+
+```html
+<div class="border-rad-lg">
+  <!-- Content with large rounded corners -->
+</div>
+```
+
+For photo modules, the radius is applied directly to the `.fl-photo-img` element.
+
+## Individual Corner Radius
+
+You can also control each corner independently. These work on general elements and Beaver Builder photo modules.
+
+### Top Left
+
+| Class | Radius Token |
+| --- | --- |
+| `.rounded-tl-0` | var(--radius-0) |
+| `.rounded-tl-xs` | var(--radius-xs) |
+| `.rounded-tl-sm` | var(--radius-sm) |
+| `.rounded-tl-md` | var(--radius-md) |
+| `.rounded-tl-lg` | var(--radius-lg) |
+| `.rounded-tl-xl` | var(--radius-xl) |
+| `.rounded-tl-2x` | var(--radius-xxl) |
+
+### Top Right
+
+| Class | Radius Token |
+| --- | --- |
+| `.rounded-tr-0` | var(--radius-0) |
+| `.rounded-tr-xs` | var(--radius-xs) |
+| `.rounded-tr-sm` | var(--radius-sm) |
+| `.rounded-tr-md` | var(--radius-md) |
+| `.rounded-tr-lg` | var(--radius-lg) |
+| `.rounded-tr-xl` | var(--radius-xl) |
+| `.rounded-tr-2x` | var(--radius-xxl) |
+
+### Bottom Right
+
+| Class | Radius Token |
+| --- | --- |
+| `.rounded-br-0` | var(--radius-0) |
+| `.rounded-br-xs` | var(--radius-xs) |
+| `.rounded-br-sm` | var(--radius-sm) |
+| `.rounded-br-md` | var(--radius-md) |
+| `.rounded-br-lg` | var(--radius-lg) |
+| `.rounded-br-xl` | var(--radius-xl) |
+| `.rounded-br-2x` | var(--radius-xxl) |
+
+### Bottom Left
+
+| Class | Radius Token |
+| --- | --- |
+| `.rounded-bl-0` | var(--radius-0) |
+| `.rounded-bl-xs` | var(--radius-xs) |
+| `.rounded-bl-sm` | var(--radius-sm) |
+| `.rounded-bl-md` | var(--radius-md) |
+| `.rounded-bl-lg` | var(--radius-lg) |
+| `.rounded-bl-xl` | var(--radius-xl) |
+| `.rounded-bl-2x` | var(--radius-xxl) |
+
+### Example: Mixed Corners
+
+```html
+<!-- Large radius on top corners, no radius on bottom -->
+<div class="rounded-tl-lg rounded-tr-lg rounded-bl-0 rounded-br-0">
+  <img src="..." />
+</div>
+```

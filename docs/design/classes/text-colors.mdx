@@ -1,0 +1,40 @@
+---
+title: Text Colors
+slug: text-colors
+sidebar_position: 5
+---
+
+# Text Colors
+
+Use these classes to set the text color of an element and all headings within it. They use the same base color scale as the background color classes, but apply to `color` instead of `background-color`.
+
+## Base Colors
+
+| Class | Color |
+| --- | --- |
+| `.text-base-50` | var(--base-50) |
+| `.text-base-100` | var(--base-100) |
+| `.text-base-200` | var(--base-200) |
+| `.text-base-300` | var(--base-300) |
+| `.text-base-400` | var(--base-400) |
+| `.text-base-500` | var(--base-500) |
+| `.text-base-600` | var(--base-600) |
+| `.text-base-700` | var(--base-700) |
+| `.text-base-800` | var(--base-800) |
+| `.text-base-900` | var(--base-900) |
+| `.text-base-950` | var(--base-950) |
+
+### Usage
+
+Add the class to a container and it will apply the color to the element itself and all `h1`–`h6` headings within it.
+
+```html
+<div class="text-base-100">
+  <h2>This heading will be base-100</h2>
+  <p>This paragraph will also be base-100</p>
+</div>
+```
+
+:::tip
+These classes respect the `.dark` and `.light` color mode classes, so the actual color values will adapt based on the active color mode.
+:::

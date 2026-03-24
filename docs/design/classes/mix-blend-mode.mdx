@@ -1,0 +1,23 @@
+---
+title: Mix Blend Mode
+slug: mix-blend-mode
+sidebar_position: 9
+---
+
+# Mix Blend Mode
+
+The `.difference` class applies a `mix-blend-mode: difference` to an element. This inverts the colors of the element based on its background, which is useful for creating contrast effects where text or content overlaps varied backgrounds.
+
+```css title="utilities.css"
+body:not(.fl-builder) .difference {
+    mix-blend-mode: difference;
+}
+```
+
+### Usage
+
+Add `.difference` to a Beaver Builder row or element to blend it with the content behind it.
+
+:::note
+This class is disabled inside the Beaver Builder editor (`body.fl-builder`) to avoid visual confusion while editing.
+:::

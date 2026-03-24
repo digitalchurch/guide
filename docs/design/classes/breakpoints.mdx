@@ -1,0 +1,76 @@
+---
+title: Breakpoints
+slug: breakpoints
+sidebar_position: 20
+---
+
+# Breakpoints
+
+Utility classes that change behavior at different screen sizes. The design system uses four breakpoints.
+
+| Breakpoint | Label | Range |
+| --- | --- | --- |
+| XL | Desktop | > 1440px |
+| LG | Laptop | 960px – 1440px |
+| MD | Tablet | 480px – 960px |
+| SM | Mobile | < 480px |
+
+## Responsive Visibility
+
+Show or hide elements at specific breakpoints. Each class hides the element only at its matching breakpoint and shows it at all others.
+
+| Class | Hidden at | Visible at |
+| --- | --- | --- |
+| `.hidden-xl` | XL (> 1440px) | LG, MD, SM |
+| `.hidden-lg` | LG (960px – 1440px) | XL, MD, SM |
+| `.hidden-md` | MD (480px – 960px) | XL, LG, SM |
+| `.hidden-sm` | SM (< 480px) | XL, LG, MD |
+
+These also work inside Swiper slides (`.swiper-slide .hidden-*`).
+
+### Usage
+
+```html
+<!-- Hide on mobile, show everywhere else -->
+<div class="hidden-sm">
+  Desktop/tablet content here
+</div>
+
+<!-- Hide on desktop, show on smaller screens -->
+<div class="hidden-xl hidden-lg">
+  Mobile/tablet content here
+</div>
+```
+
+## Responsive Grid Columns
+
+Override grid column counts at specific breakpoints. The naming pattern is `.grid-cols-{breakpoint}-{count}`.
+
+### XL Desktop (> 1440px)
+
+`.grid-cols-xl-1` through `.grid-cols-xl-12`
+
+### LG Laptop (960px – 1440px)
+
+`.grid-cols-lg-1` through `.grid-cols-lg-12`
+
+### MD Tablet (480px – 960px)
+
+`.grid-cols-md-1` through `.grid-cols-md-12`
+
+### SM Mobile (< 480px)
+
+`.grid-cols-sm-1` through `.grid-cols-sm-12`
+
+### Example: Responsive Grid
+
+```html
+<div class="grid grid-cols-4 grid-cols-md-2 grid-cols-sm-1 gap-md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+```
+
+This creates a 4-column grid on desktop/laptop, 2 columns on tablet, and a single column on mobile.

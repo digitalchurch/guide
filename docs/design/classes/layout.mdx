@@ -1,0 +1,96 @@
+---
+title: Layout
+slug: layout
+sidebar_position: 16
+---
+
+# Layout
+
+Utility classes for controlling display, flexbox, and alignment.
+
+## Display
+
+| Class | Description |
+| --- | --- |
+| `.block` | `display: block` |
+| `.inline-block` | `display: inline-block` |
+| `.inline` | `display: inline` |
+| `.flex` | `display: flex` |
+| `.inline-flex` | `display: inline-flex` |
+| `.table` | `display: table` |
+| `.grid` | `display: grid` |
+| `.hidden` | `display: none` |
+
+## Width
+
+| Class | Description |
+| --- | --- |
+| `.w-full` | `width: 100%` |
+
+## Flexbox
+
+### Direction
+
+| Class | Description |
+| --- | --- |
+| `.flex-col` | `flex-direction: column` |
+
+### Justify Content
+
+| Class | Description |
+| --- | --- |
+| `.justify-start` | `justify-content: flex-start` |
+| `.justify-center` | `justify-content: center` |
+| `.justify-end` | `justify-content: flex-end` |
+| `.justify-between` | `justify-content: space-between` |
+| `.justify-around` | `justify-content: space-around` |
+
+### Align Items
+
+| Class | Description |
+| --- | --- |
+| `.items-start` | `align-items: flex-start` |
+| `.items-end` | `align-items: flex-end` |
+| `.items-center` | `align-items: center` |
+| `.items-baseline` | `align-items: baseline` |
+| `.items-stretch` | `align-items: stretch` |
+
+### Align Self
+
+| Class | Description |
+| --- | --- |
+| `.self-center` | `align-self: center` |
+| `.self-start` | `align-self: flex-start` |
+
+### Example
+
+```html
+<div class="flex justify-between items-center">
+  <div>Left content</div>
+  <div>Right content</div>
+</div>
+```
+
+## Place Content
+
+For grid and flex layouts, these classes control both `align-content` and `justify-content` at once.
+
+| Class | Description |
+| --- | --- |
+| `.place-content-center` | `place-content: center` |
+| `.place-content-start` | `place-content: start` |
+| `.place-content-end` | `place-content: end` |
+| `.place-content-between` | `place-content: space-between` |
+| `.place-content-around` | `place-content: space-around` |
+| `.place-content-evenly` | `place-content: space-evenly` |
+| `.place-content-baseline` | `place-content: baseline` |
+| `.place-content-stretch` | `place-content: stretch` |
+
+## Positioning
+
+| Class | Description |
+| --- | --- |
+| `.relative` | `position: relative` |
+| `.absolute` | `position: absolute` |
+| `.top-0` | `top: 0` |
+| `.left-0` | `left: 0` |

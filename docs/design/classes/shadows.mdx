@@ -1,0 +1,56 @@
+---
+title: Shadows
+slug: shadows
+sidebar_position: 11
+---
+
+# Shadows
+
+Utility classes for applying box shadows to elements. These follow a progressive scale from subtle to dramatic.
+
+| Class | Description |
+| --- | --- |
+| `.shadow-sm` | Extra small shadow |
+| `.shadow` | Default shadow |
+| `.shadow-md` | Medium shadow |
+| `.shadow-lg` | Large shadow |
+| `.shadow-xl` | Extra large shadow |
+| `.shadow-2xl` | Dramatic large shadow |
+| `.shadow-inner` | Inset shadow |
+| `.shadow-none` | Removes shadow |
+
+## Reference
+
+```css title="utilities.css"
+.shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.shadow-inner {
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+.shadow-none {
+    box-shadow: 0 0 #0000;
+}
+```

@@ -1,0 +1,50 @@
+---
+title: Aspect Ratio & Object Fit
+slug: aspect-ratio
+sidebar_position: 18
+---
+
+# Aspect Ratio & Object Fit
+
+Utility classes for controlling the aspect ratio of elements and how content fits within them.
+
+## Aspect Ratio
+
+| Class | Ratio | Common Use |
+| --- | --- | --- |
+| `.square` | 1:1 | Profile photos, thumbnails |
+| `.widescreen` | 16:9 | Videos, hero images |
+| `.portrait` | 9:16 | Vertical/mobile video, stories |
+| `.cinemascope` | 2.35:1 | Ultra-wide cinematic content |
+
+### Usage
+
+```html
+<div class="widescreen">
+  <img src="hero.jpg" class="object-cover" />
+</div>
+```
+
+:::note
+The `.portrait` class is scoped to exclude the WordPress media modal (`.media-modal-content`) to avoid interfering with the media library UI.
+:::
+
+## Object Fit
+
+Control how an element's content (typically images or video) fills its container.
+
+| Class | Description |
+| --- | --- |
+| `.object-contain` | Scales to fit within the container, preserving aspect ratio (may leave empty space) |
+| `.object-cover` | Scales to fill the container, preserving aspect ratio (may crop) |
+| `.object-fill` | Stretches to fill the container exactly (may distort) |
+| `.object-none` | Content is not resized |
+| `.object-scale-down` | Scales down like `contain` if needed, but never scales up |
+
+### Example: Cover Image
+
+```html
+<div class="widescreen">
+  <img src="photo.jpg" class="object-cover w-full" />
+</div>
+```
