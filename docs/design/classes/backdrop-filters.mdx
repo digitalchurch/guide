@@ -38,3 +38,32 @@ body:not(.fl-builder) .backdrop-blur,
 }
 ```
 
+### Remove on Hover
+
+If you want a backdrop filter to disappear when the user hovers over the element, add the `.backdrop-none-hover` class. This is useful for interactive sections where you want to reveal the full background image on hover.
+
+```css title="utilities.css"
+body:not(.fl-builder) .backdrop-none-hover:hover,
+.backdrop-none-hover:hover .fl-row-content-wrap:after,
+.backdrop-none-hover:hover .fl-col-content::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+```
+
+### Transition
+
+To animate the backdrop filter change smoothly (e.g., when combined with `.backdrop-none-hover`), add the `.backdrop-transition` class. This applies a 0.3s ease transition to the backdrop filter property.
+
+```css title="utilities.css"
+body:not(.fl-builder) .backdrop-transition,
+.backdrop-transition .fl-row-content-wrap:after,
+.backdrop-transition .fl-col-content::after {
+    transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+}
+```
+
+:::tip
+Combine `.backdrop-blur`, `.backdrop-none-hover`, and `.backdrop-transition` on the same row for a smooth frosted-glass-to-clear hover effect.
+:::
+
