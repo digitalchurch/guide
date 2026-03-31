@@ -39,10 +39,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/digitalchurch/guide/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
