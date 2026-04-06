@@ -1,0 +1,536 @@
+---
+title: Building Nested Forms with Gravity Forms
+description: Master GP Nested Forms to create complex multi-level forms where users can submit multiple related entries in a single form submission. Learn through a practical VBS registration example.
+sidebar_label: Nested Forms
+tags:
+  - gravity-forms
+  - nested-forms
+  - multi-level-forms
+  - form-relationships
+  - conditional-logic
+---
+
+# Building Nested Forms with Gravity Forms
+
+Nested forms allow you to create complex, multi-level form structures where users can submit multiple related entries within a single form submission. This powerful feature is perfect for scenarios where you need to collect a parent record along with multiple child records.
+
+## What Are Nested Forms?
+
+Nested forms enable you to embed one form (child form) inside another form (parent form), creating a one-to-many relationship between form entries. When a user submits the parent form, it can contain multiple instances of the child form, all processed as a single transaction.
+
+**Common Use Cases:**
+- Event registration with multiple attendees
+- Product orders with multiple line items
+- Survey responses with multiple participants
+- Course enrollment with multiple students
+- **VBS registration with multiple children** (our example)
+
+## How Nested Forms Work
+
+### Architecture Overview
+
+1. **Parent Form** - Contains the main record information and houses the nested form field
+2. **Child Form** - The embedded form that can be filled out multiple times
+3. **Nested Form Field** - A special field type that connects the two forms
+4. **Data Relationship** - Parent entries contain references to multiple child entries
+
+### Key Features
+
+- **Dynamic Entry Creation**: Users can add/remove child form instances as needed
+- **Field Population**: Child forms can access parent form data via merge tags
+- **Calculation Integration**: Child form totals can be calculated into parent form fields
+- **Conditional Logic**: Both parent and child forms support full conditional logic
+- **Notification Flexibility**: Separate notifications for parent and child form submissions
+
+### Data Flow
+
+1. User fills out parent form fields
+2. User adds one or more child form entries
+3. Child form data can reference parent form fields (like email addresses)
+4. Calculations from child forms feed back into parent form totals
+5. Single submission creates one parent entry with multiple linked child entries
+
+## Example: VBS Family Registration
+
+Throughout this guide, we'll build a Vacation Bible School (VBS) registration system that demonstrates these concepts. Our example will include:
+
+- **Parent Form**: Family information and contact details
+- **Child Form**: Individual child registration with age-based pricing
+- **Advanced Features**: Variable pricing, conditional logic, automated notifications, and payment integration
+
+## Prerequisites
+
+Before setting up your VBS registration forms, ensure you have:
+
+- **Gravity Forms** plugin installed and activated
+- **GP Nested Forms** perk from Gravity Wiz
+- **GP Conditional Pricing** perk (for variable pricing examples)
+- Basic understanding of Gravity Forms field types and conditional logic
+
+## Implementation Example: VBS Registration System
+
+We'll create a two-form nested system that demonstrates core nested form concepts:
+
+1. **VBS Child Registration** (Child Form) - Individual child records with conditional pricing
+2. **VBS Family Registration** (Parent Form) - Parent record that embeds the child form for multiple submissions
+
+### Key Features
+
+- Register multiple children in a single form submission
+- Variable pricing based on age groups (Preschool-2nd Grade: $25, 3rd-5th Grade: $40)
+- Automatic total calculation in the parent form
+- Individual confirmation emails for each child registration
+- Family summary notification to administrators
+
+## Step 1: Building the Child Form
+
+The child form represents the "many" side of our one-to-many relationship. This form will be embedded within the parent form and can be filled out multiple times.
+
+### Child Form Setup: VBS Child Registration
+
+First, we'll create the child form that will capture individual child information and pricing.
+
+### Basic Child Information Fields
+
+1. **Child's Full Name** (Name Field)
+   - Field Label: "Child's Full Name"
+   - Required: Yes
+
+2. **Child Age Group** (Radio Button Field)
+   - Field Label: "Child Age Group"
+   - Required: Yes
+   - Options:
+     - Preschool
+     - Kindergarten
+     - 1st Grade
+     - 2nd Grade
+     - 3rd Grade
+     - 4th Grade
+     - 5th Grade
+
+3. **Parent Email** (Email Field) - **Field Population Example**
+   - Field Label: "Parent Email"
+   - Required: Yes
+   - Default Value: `{Parent:3}` (assuming field ID 3 is the parent email on the family form)
+   - Description: "This will be populated from the family form automatically"
+   
+   **Nested Forms Concept**: Child forms can access parent form field values using the `{Parent:FieldID}` merge tag. This enables data sharing between the parent and child forms.
+
+4. **Special Needs/Allergies** (Textarea Field)
+   - Field Label: "Special Needs, Allergies, or Medical Information"
+   - Required: No
+
+### Age-Based Product Fields
+
+Since Gravity Forms conditional logic can't change a single product's price dynamically, we'll create separate product fields for each age group with conditional logic.
+
+#### Preschool-2nd Grade Product Field
+
+1. **Field Type:** Product (Single Product)
+2. **Field Label:** "VBS Registration - Early Elementary"
+3. **Product Name:** "VBS Registration (Preschool-2nd Grade)"
+4. **Price:** $25.00
+5. **Conditional Logic:**
+   - Show this field if: Child Age Group is any of the following: Preschool, Kindergarten, 1st Grade, 2nd Grade
+
+#### 3rd-5th Grade Product Field
+
+1. **Field Type:** Product (Single Product)
+2. **Field Label:** "VBS Registration - Upper Elementary"
+3. **Product Name:** "VBS Registration (3rd-5th Grade)"
+4. **Price:** $40.00
+5. **Conditional Logic:**
+   - Show this field if: Child Age Group is any of the following: 3rd Grade, 4th Grade, 5th Grade
+
+### Optional: T-Shirt Size
+
+1. **T-Shirt Size** (Dropdown Field)
+   - Field Label: "T-Shirt Size"
+   - Required: Yes
+   - Options:
+     - XS (Ages 2-4)
+     - S (Ages 4-6)
+     - M (Ages 6-8)
+     - L (Ages 8-10)
+     - XL (Ages 10-12)
+
+## Step 2: Child Form Notifications
+
+**Nested Forms Concept**: Child forms can trigger their own notifications independently from the parent form. This allows for granular communication strategies.
+
+Set up notifications for individual child registrations that will be sent to the parent email captured in the child form.
+
+### Child Registration Confirmation Email
+
+1. **To:** `{Parent Email:4}` (use the field ID of your Parent Email field)
+2. **From Name:** Your Church Name VBS
+3. **From Email:** Your church email
+4. **Subject:** `{Child's Full Name:1} is registered for VBS!`
+5. **Message Template:**
+```
+Hi {Parent Email:4},
+
+Great news! {Child's Full Name:1} has been successfully registered for our Vacation Bible School program.
+
+Registration Details:
+- Child's Name: {Child's Full Name:1}
+- Age Group: {Child Age Group:2}
+- Registration Fee: {all_fields}
+- T-Shirt Size: {T-Shirt Size:5}
+
+Special Needs/Allergies: {Special Needs/Allergies:6}
+
+We're excited to have {Child's Full Name:1} join us for an amazing week of fun, learning, and fellowship!
+
+If you have any questions, please don't hesitate to contact us.
+
+Blessings,
+[Your Church Name] VBS Team
+```
+
+## Step 3: Building the Parent Form
+
+**Nested Forms Concept**: The parent form serves as the container that houses the nested form field. It collects the main record information and enables multiple child form submissions within a single transaction.
+
+### Parent Form Setup: VBS Family Registration
+
+Now we'll create the parent form that will collect family information and embed the child form for multiple registrations.
+
+### Family Information Fields
+
+1. **Family Name** (Text Field)
+   - Field Label: "Family Last Name"
+   - Required: Yes
+
+2. **Primary Contact Name** (Name Field)
+   - Field Label: "Primary Contact Name"
+   - Required: Yes
+
+3. **Primary Contact Email** (Email Field)
+   - Field Label: "Primary Contact Email"
+   - Required: Yes
+
+4. **Primary Contact Phone** (Phone Field)
+   - Field Label: "Primary Contact Phone"
+   - Required: Yes
+
+5. **Emergency Contact Name** (Text Field)
+   - Field Label: "Emergency Contact Name"
+   - Required: Yes
+
+6. **Emergency Contact Phone** (Phone Field)
+   - Field Label: "Emergency Contact Phone"
+   - Required: Yes
+
+### The Nested Form Field: Connecting Parent and Child
+
+**Nested Forms Concept**: This is the key field that creates the relationship between your parent and child forms. It allows users to add multiple instances of the child form within the parent form.
+
+1. **Add Nested Form Field**
+   - Field Label: "Children Registration"
+   - Nested Form: Select "VBS Child Registration" (the form created in Step 1)
+   
+2. **Summary Fields Configuration:**
+   Select which fields from the child form should display in the summary table:
+   - Child's Full Name
+   - Child Age Group
+   - T-Shirt Size (if included)
+   - Registration fee field (will show the calculated price)
+
+3. **Entry Labels:**
+   - Singular: "child"
+   - Plural: "children"
+
+4. **Entry Limits:**
+   - Minimum: 1 (makes registration required)
+   - Maximum: 10 (adjust based on your needs)
+
+5. **Appearance:**
+   - Modal Header Color: Choose your church's brand color
+
+### Data Aggregation: Calculating Child Form Totals
+
+**Nested Forms Concept**: Parent forms can aggregate data from child forms using special merge tags. This enables automatic calculation of totals, averages, or other summary data from multiple child entries.
+
+Add a calculated product field to sum all child registration fees:
+
+1. **Field Type:** Product (Calculation)
+2. **Field Label:** "Total Registration Fees"
+3. **Product Name:** "VBS Family Registration Total"
+4. **Calculation Formula:** `{Children Registration:7:total}` 
+   - Note: Replace "7" with the actual field ID of your Nested Form field
+5. **Description:** "This total includes registration fees for all children"
+
+### Payment Integration (Optional)
+
+If you're collecting payment online:
+
+1. Add Gravity Forms payment fields (Credit Card, etc.)
+2. Configure your payment processor (Stripe, PayPal, etc.)
+3. The nested form total will automatically flow into the payment calculation
+
+## Step 4: Configure Family Form Notifications
+
+### Admin Notification
+
+Set up a notification for church administrators when a family completes registration:
+
+1. **To:** Your church admin email
+2. **From Name:** VBS Registration System
+3. **From Email:** Your church email (or noreply email)
+4. **Subject:** `New VBS Family Registration: {Family Name:1}`
+5. **Message Template:**
+```
+New VBS Family Registration Received
+
+Family Information:
+- Family Name: {Family Name:1}
+- Primary Contact: {Primary Contact Name:2}
+- Email: {Primary Contact Email:3}
+- Phone: {Primary Contact Phone:4}
+- Emergency Contact: {Emergency Contact Name:5} - {Emergency Contact Phone:6}
+
+Children Registered:
+{Children Registration:7}
+
+Total Registration Fees: {Total Registration Fees:8}
+
+Payment Status: {payment_status}
+
+You can view the complete entry details in your WordPress admin under Forms > Entries.
+```
+
+### Family Confirmation Email
+
+Send a confirmation to the family with their complete registration details:
+
+1. **To:** `{Primary Contact Email:3}`
+2. **From Name:** Your Church Name VBS
+3. **From Email:** Your church email
+4. **Subject:** `VBS Registration Confirmation - {Family Name:1} Family`
+5. **Message Template:**
+```
+Dear {Primary Contact Name:2},
+
+Thank you for registering your family for our Vacation Bible School program! We're excited to welcome your children to an amazing week of fun and faith.
+
+Registration Summary:
+- Family: {Family Name:1}
+- Primary Contact: {Primary Contact Name:2}
+- Phone: {Primary Contact Phone:4}
+- Emergency Contact: {Emergency Contact Name:5} - {Emergency Contact Phone:6}
+
+Children Registered:
+{Children Registration:7}
+
+Total Registration Fees: {Total Registration Fees:8}
+
+VBS Details:
+- Dates: [Insert your VBS dates]
+- Times: [Insert your VBS times]
+- Location: [Insert your church address]
+- Drop-off/Pick-up: [Insert specific instructions]
+
+What to Expect:
+Each child will receive individual confirmation emails with their specific registration details. Please make sure to review any special needs or allergies you've noted for each child.
+
+Important Reminders:
+- Please arrive 15 minutes early on the first day for check-in
+- Pack a snack and water bottle daily
+- Wear comfortable clothes suitable for active play
+- Sunscreen will be provided for outdoor activities
+
+If you need to make any changes to your registration or have questions, please contact us at [your contact information].
+
+We can't wait to see your family at VBS!
+
+Blessings,
+[Your Church Name] VBS Team
+```
+
+## Step 5: Testing Your Forms
+
+### Test the Child Form
+
+1. Preview the child form independently first
+2. Test each age group selection to ensure correct pricing appears
+3. Verify conditional logic is working for both price tiers
+4. Submit a test entry to confirm notifications are sent
+
+### Test the Family Form
+
+1. Preview the family form
+2. Add multiple children with different age groups
+3. Verify the total calculation is working correctly
+4. Test the complete submission process
+5. Check that both child confirmations and family confirmation are sent
+6. Verify admin notification is received
+
+### Common Testing Scenarios
+
+- Family with all preschool-2nd grade children
+- Family with all 3rd-5th grade children  
+- Family with mixed age groups
+- Family with special needs children
+- Minimum and maximum entry limits
+
+## Step 6: Advanced Customization
+
+### Custom Styling
+
+You can customize the appearance of your nested forms using CSS:
+
+```css
+/* Style the nested form modal */
+.gpnf-dialog.ui-dialog {
+    border-radius: 8px;
+}
+
+/* Style the child entries table */
+.gpnf-nested-entries table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gpnf-nested-entries th,
+.gpnf-nested-entries td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style the add child button */
+.gpnf-add-entry {
+    background-color: #your-brand-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+```
+
+### Additional Field Ideas
+
+Consider adding these fields to enhance your VBS registration:
+
+**For Child Form:**
+- Previous VBS attendance (Yes/No)
+- Preferred small group leader (if applicable)
+- Photo permission checkbox
+- Pickup authorization (who can pick up this child)
+
+**For Family Form:**
+- How did you hear about VBS? (for tracking marketing effectiveness)
+- Volunteer opportunities interest
+- Sibling grouping preferences
+- Camper vs. volunteer distinction
+
+### Integration with Other Systems
+
+#### WordPress User Registration
+
+If you want to create WordPress user accounts for families:
+
+1. Install Gravity Forms User Registration Add-On
+2. Add user registration feed to the family form
+3. Map family information to user fields
+4. Create a custom role for "VBS Families"
+
+#### Export and Data Management
+
+Set up efficient data export for your VBS planning:
+
+1. Use Gravity Forms' export functionality
+2. Export parent and child data together
+3. Create reports for age group planning
+4. Generate attendance lists by day/group
+
+## Troubleshooting
+
+### Common Issues
+
+**Child notifications not sending:**
+- Verify the Parent Email field has the correct `{Parent}` merge tag
+- Check that the email field is properly mapped in conditional logic
+- Ensure notifications are enabled on the child form
+
+**Pricing not calculating correctly:**
+- Confirm product field conditional logic matches age group selections exactly
+- Verify field IDs in the parent form calculation formula
+- Test that only one price field shows for each child
+
+**Nested form modal not opening:**
+- Check for JavaScript conflicts with your theme
+- Ensure GP Nested Forms plugin is activated
+- Try disabling caching temporarily to test
+
+**Total not calculating in parent form:**
+- Verify the Nested Form field ID matches the calculation formula
+- Ensure child form has at least one product field
+- Check that the calculation field is set to "Calculation" type
+
+### Getting Help
+
+If you need additional support:
+
+1. Check the [Gravity Wiz documentation](https://gravitywiz.com/documentation/gravity-forms-nested-forms/)
+2. Search the [Gravity Forms support forums](https://www.gravityforms.com/support/)
+3. Contact your web developer for custom modifications
+4. Consider Gravity Wiz support for complex nested form scenarios
+
+## Best Practices
+
+### Form Organization
+
+- Use clear, descriptive field labels
+- Group related fields with section breaks
+- Add helpful descriptions for complex fields
+- Test the complete user experience on mobile devices
+
+### Data Management
+
+- Regularly export registration data for backup
+- Set up automated reports for planning purposes
+- Archive completed forms after VBS ends
+- Consider data retention policies for child information
+
+### Security Considerations
+
+- Limit form access during registration periods only
+- Use secure hosting for payment processing
+- Implement spam protection (reCAPTCHA, honeypot fields)
+- Follow your denomination's guidelines for collecting child information
+
+### Performance Optimization
+
+- Use caching plugins compatible with Gravity Forms
+- Optimize images and media in form descriptions
+- Test form loading times on various devices
+- Consider progressive enhancement for complex forms
+
+## Conclusion
+
+Nested forms are a powerful tool for creating complex, multi-level form experiences that maintain data relationships while simplifying the user experience. Through our VBS registration example, we've demonstrated the core concepts of nested forms:
+
+### Key Concepts Covered
+
+- **One-to-Many Relationships**: Parent forms containing multiple child form entries
+- **Field Population**: Child forms accessing parent form data via merge tags
+- **Data Aggregation**: Parent forms calculating totals from child form submissions
+- **Independent Notifications**: Child and parent forms triggering separate notification workflows
+- **Conditional Logic Integration**: Both form levels supporting complex conditional behaviors
+
+### Beyond VBS Registration
+
+These same patterns can be applied to many scenarios:
+- **Event Management**: Event details with multiple session registrations
+- **E-commerce**: Orders with multiple product line items
+- **Survey Systems**: Surveys with multiple participant responses
+- **Course Management**: Programs with multiple student enrollments
+
+### Next Steps
+
+With nested forms mastered, you can build sophisticated form systems that handle complex data relationships while maintaining a clean, user-friendly interface. Remember to thoroughly test your forms before launching, and consider setting up a staging environment for experimentation.
+
+The combination of Gravity Forms and GP Nested Forms opens up endless possibilities for creating powerful, relational form experiences that scale with your needs.

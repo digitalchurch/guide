@@ -1,0 +1,63 @@
+---
+title: Cloudflare Turnstile for Gravity Forms
+slug: cloudflare-turnstile-gravity-forms
+sidebar_position: 13
+---
+
+# Use Cloudflare Turnstile with Gravity Forms
+
+Use this guide to set up Cloudflare Turnstile on your Gravity Forms so spam bots are blocked before submissions are accepted.
+
+## Prerequisites
+
+- WordPress admin access
+- Gravity Forms installed and active
+- Gravity Forms Cloudflare Turnstile Add-On installed and active
+- Cloudflare account access for your domain
+
+## 1. Create a Turnstile widget in Cloudflare
+
+In Cloudflare, go to **Application Security → Turnstile** to access Turnstile widgets for your account.
+
+Click **+ Add widget**.
+
+After you add a widget (or edit an existing widget), add your domain using **+ Add Hostnames**.
+
+You can add hostnames for domains inside your Cloudflare account and hostnames for external domains that are managed outside Cloudflare.
+
+Copy both keys:
+
+- **Site Key**
+- **Secret Key**
+
+:::note
+You can have up to 10 widgets per Cloudflare account, and each widget can include up to 10 domain hostnames. If you need more than 10 domains, create widget groups with up to 10 hostnames each.
+:::
+
+## 2. Add keys in Gravity Forms settings
+
+In WordPress, go to **Forms → Settings → Cloudflare Turnstile**.
+
+1. Paste the **Site Key** and **Secret Key**
+2. Save settings
+
+## 3. Add Turnstile to each form
+
+1. Open a form in Gravity Forms
+2. Add a **Turnstile** field near the submit button
+3. Save/update the form
+
+Repeat for each form you want protected.
+
+## 4. Test on the front end
+
+1. Open the public page with the form (use a private/incognito window)
+2. Confirm Turnstile is visible and loads correctly
+3. Submit a valid test entry
+4. Confirm the entry appears in Gravity Forms entries
+
+## Troubleshooting
+
+- **Turnstile not showing:** verify domain in Cloudflare widget and confirm add-on is active
+- **Submission fails validation:** re-check Site/Secret keys and save settings again
+- **Works for admins, not visitors:** clear cache/CDN and test in private window
