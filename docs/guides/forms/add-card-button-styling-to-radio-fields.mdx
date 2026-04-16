@@ -1,0 +1,32 @@
+---
+title: Add Card/Button Styling to Radio Fields
+---
+
+# Add Card/Button Styling to Radio Fields
+
+Use this CSS to style Gravity Forms radio choices like full-width cards/buttons.
+
+You can add this CSS in one of three places, depending on how broadly you want it applied:
+
+- **Form module CSS** for a single form module
+- **Layout CSS** for a single page layout
+- **Global CSS** for site-wide use
+
+```css
+.gform_wrapper.gravity-theme .gfield_description {
+    padding-top: 0;
+}
+
+.gfield_radio .gchoice {
+    margin-bottom:12px !important;
+    border:1px solid var(--base-400);
+    border-radius:8px;
+    width:100%;
+    padding-left:12px;
+}
+
+.gfield_radio .gchoice label {
+    width:100%;
+    padding: 12px;
+}
+```
